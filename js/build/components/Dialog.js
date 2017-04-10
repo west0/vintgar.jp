@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _Button = require('./Button');
+
+var _Button2 = _interopRequireDefault(_Button);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _HomeMenu = require('./HomeMenu');
-
-var _HomeMenu2 = _interopRequireDefault(_HomeMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22,55 +22,68 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Home = function (_Component) {
-  _inherits(Home, _Component);
+var Dialog = function (_Component) {
+  _inherits(Dialog, _Component);
 
-  function Home(props) {
-    _classCallCheck(this, Home);
+  function Dialog() {
+    _classCallCheck(this, Dialog);
 
-    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+    return _possibleConstructorReturn(this, (Dialog.__proto__ || Object.getPrototypeOf(Dialog)).apply(this, arguments));
   }
 
-  _createClass(Home, [{
+  _createClass(Dialog, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      document.body.classList.remove('DialogModalOpen');
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.modal) {
+        document.body.classList.add('DialogModalOpen');
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { id: 'home', className: 'page-component' },
+        { className: this.props.modal ? 'Dialog DialogModal' : 'Dialog' },
         _react2.default.createElement(
-          'header',
-          null,
+          'div',
+          { className: this.props.modal ? 'DialogModalWrap' : null },
           _react2.default.createElement(
-            'h1',
-            null,
-            'vintgar.jp'
+            'div',
+            { className: 'DialogHeader' },
+            this.props.header
           ),
           _react2.default.createElement(
-            'h2',
-            null,
-            'Let me drive your project!!'
+            'div',
+            { className: 'DialogBody' },
+            this.props.children
           ),
           _react2.default.createElement(
-            'p',
-            { id: 'lead' },
-            'Freelance; Project Manager, Dev-Director, Business-Consaltant.'
-          )
-        ),
-        _react2.default.createElement(_HomeMenu2.default, null),
-        _react2.default.createElement(
-          'footer',
-          null,
-          _react2.default.createElement(
-            'p',
-            null,
-            'Tokyo, Japan.'
+            'div',
+            { className: 'DialogFooter' },
+            this.props.hasCancel ? _react2.default.createElement(
+              'span',
+              {
+                className: 'DialogDismiss',
+                onClick: this.props.onAction.bind(this, 'dismiss') },
+              'Cancel'
+            ) : null,
+            _react2.default.createElement(
+              _Button2.default,
+              { onClick: this.props.onAction.bind(this, this.props.hasCancel ? 'confirm' : 'dismiss') },
+              this.props.confirmLabel
+            )
           )
         )
       );
     }
   }]);
 
-  return Home;
+  return Dialog;
 }(_react.Component);
 
-exports.default = Home;
+exports.default = Dialog;

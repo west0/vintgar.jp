@@ -1,11 +1,45 @@
+/*
+base-line: 16px
+
+*/
+
 html {
+  font-size: 16px;
   background-color: #f0f0f0;
   font: 16px Arial;
 }
 
-body {
-  margin: 0;
+a{
+  color: #fff;
+  text-decoration: none;
 }
+
+a:hover, a:active{
+  color: #fff;
+  text-decoration: underline;
+}
+
+a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+  margin: 0;
+  min-width: 320px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.page-component{
+  padding-top: 1rem;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
 
 input, textarea {
   font-size: 14px;

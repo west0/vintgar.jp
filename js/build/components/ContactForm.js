@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -6,9 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _FormInput = require('./FormInput');
+
+var _FormInput2 = _interopRequireDefault(_FormInput);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,12 +32,23 @@ var ContactForm = function (_Component) {
   }
 
   _createClass(ContactForm, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { id: "profile" },
-        "ContactForm Component"
+        'form',
+        { id: 'contact-form' },
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Contact Form'
+        ),
+        _react2.default.createElement(_FormInput2.default, null),
+        _react2.default.createElement(_FormInput2.default, null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'If you will not get any replies in two days, send messages again.'
+        )
       );
     }
   }]);

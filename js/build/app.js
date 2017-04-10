@@ -8,6 +8,10 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _GlobalNav = require('./components/GlobalNav');
+
+var _GlobalNav2 = _interopRequireDefault(_GlobalNav);
+
 var _Home = require('./components/Home');
 
 var _Home2 = _interopRequireDefault(_Home);
@@ -25,6 +29,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
+  _react2.default.createElement(_GlobalNav2.default, null),
   _react2.default.createElement(_Home2.default, null),
   _react2.default.createElement(_Profile2.default, null),
   _react2.default.createElement(_ContactForm2.default, null),

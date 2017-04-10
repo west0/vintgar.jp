@@ -18,27 +18,55 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Contact = function (_Component) {
-  _inherits(Contact, _Component);
+var GlobalNav = function (_Component) {
+  _inherits(GlobalNav, _Component);
 
-  function Contact(props) {
-    _classCallCheck(this, Contact);
+  function GlobalNav(props) {
+    _classCallCheck(this, GlobalNav);
 
-    return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this, props));
+    return _possibleConstructorReturn(this, (GlobalNav.__proto__ || Object.getPrototypeOf(GlobalNav)).call(this, props));
   }
 
-  _createClass(Contact, [{
+  _createClass(GlobalNav, [{
     key: "render",
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { id: "profile" },
-        "Profile Component"
+        "nav",
+        { id: "global-nav" },
+        _react2.default.createElement(
+          "ul",
+          null,
+          _react2.default.createElement(
+            "li",
+            { onClick: "" },
+            "home"
+          ),
+          _react2.default.createElement(
+            "li",
+            { onClick: "" },
+            "profile"
+          ),
+          _react2.default.createElement(
+            "li",
+            { onClick: "" },
+            "works"
+          ),
+          _react2.default.createElement(
+            "li",
+            { onClick: "" },
+            "contact"
+          )
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "Global Navigation Component."
+        )
       );
     }
   }]);
 
-  return Contact;
+  return GlobalNav;
 }(_react.Component);
 
-exports.default = Contact;
+exports.default = GlobalNav;

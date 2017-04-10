@@ -9,7 +9,9 @@ sh scripts/build.sh
 ./node_modules/.bin/uglify -s bundle.js -o __deployme/bundle.js
 
 # minify css
-./node_modules/.bin/cssshrink bundle.css > __deployme/bundle.css
+cp bundle.css __deployme/bundle.css
+#./node_modules/.bin/cssshrink bundle.css > __deployme/bundle.css
+
 
 # copy html and images
 cp index.html __deployme/index.html

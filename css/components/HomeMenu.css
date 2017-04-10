@@ -1,0 +1,10 @@
+#home-menu ul{
+  list-style: none none outside;
+}
+
+#home-menu ul li{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+

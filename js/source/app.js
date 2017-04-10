@@ -4,12 +4,14 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/Home'
-import Profile from './components/Profile'
-import ContactForm from './components/ContactForm'
+import GlobalNav from './components/GlobalNav';
+import Home from './components/Home';
+import Profile from './components/Profile';
+import ContactForm from './components/ContactForm';
 
 ReactDOM.render(
   <div>
+    <GlobalNav />
     <Home />
     <Profile />
     <ContactForm />

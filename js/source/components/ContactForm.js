@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, {Component} from 'react';
+import FormInput from './FormInput';
 
 type Props = {
   hoge: Array<Object>,
@@ -13,9 +14,12 @@ class ContactForm extends Component {
   }
   render() {
     return (
-      <div id="profile">
-        ContactForm Component
-      </div>
+      <form id="contact-form">
+        <h3>Contact Form</h3>
+        <FormInput />
+        <FormInput />
+        <p>If you will not get any replies in two days, send messages again.</p>
+      </form>
     );
   }
 }
