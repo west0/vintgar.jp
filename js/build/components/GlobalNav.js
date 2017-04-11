@@ -32,35 +32,46 @@ var GlobalNav = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "nav",
-        { id: "global-nav" },
+        { id: "global-nav", className: "page-component" },
         _react2.default.createElement(
           "ul",
           null,
           _react2.default.createElement(
             "li",
-            { onClick: "" },
-            "home"
+            { onClick: "#home" },
+            _react2.default.createElement(
+              "a",
+              { href: "#home" },
+              "home"
+            )
           ),
           _react2.default.createElement(
             "li",
-            { onClick: "" },
-            "profile"
+            { onClick: "#profile" },
+            _react2.default.createElement(
+              "a",
+              { href: "#profile" },
+              "services"
+            )
           ),
           _react2.default.createElement(
             "li",
-            { onClick: "" },
-            "works"
+            { onClick: "#works" },
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              "works"
+            )
           ),
           _react2.default.createElement(
             "li",
-            { onClick: "" },
-            "contact"
+            { onClick: "#contact-form" },
+            _react2.default.createElement(
+              "a",
+              { href: "#contact-form" },
+              "contact"
+            )
           )
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "Global Navigation Component."
         )
       );
     }

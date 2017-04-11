@@ -205,35 +205,46 @@ var GlobalNav = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "nav",
-        { id: "global-nav" },
+        { id: "global-nav", className: "page-component" },
         _react2.default.createElement(
           "ul",
           null,
           _react2.default.createElement(
             "li",
-            { onClick: "" },
-            "home"
+            { onClick: "#home" },
+            _react2.default.createElement(
+              "a",
+              { href: "#home" },
+              "home"
+            )
           ),
           _react2.default.createElement(
             "li",
-            { onClick: "" },
-            "profile"
+            { onClick: "#profile" },
+            _react2.default.createElement(
+              "a",
+              { href: "#profile" },
+              "services"
+            )
           ),
           _react2.default.createElement(
             "li",
-            { onClick: "" },
-            "works"
+            { onClick: "#works" },
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              "works"
+            )
           ),
           _react2.default.createElement(
             "li",
-            { onClick: "" },
-            "contact"
+            { onClick: "#contact-form" },
+            _react2.default.createElement(
+              "a",
+              { href: "#contact-form" },
+              "contact"
+            )
           )
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "Global Navigation Component."
         )
       );
     }
@@ -284,32 +295,36 @@ var Home = function (_Component) {
         'div',
         { id: 'home', className: 'page-component' },
         _react2.default.createElement(
-          'header',
-          null,
+          'div',
+          { id: 'home-contents' },
           _react2.default.createElement(
-            'h1',
+            'header',
             null,
-            'vintgar.jp'
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Let me drive your project!!'
+            ),
+            _react2.default.createElement(
+              'h2',
+              null,
+              'Yoshiro Nishimura; Freelancer.'
+            ),
+            _react2.default.createElement(
+              'p',
+              { id: 'lead' },
+              'Freelance; Project Manager, Dev-Director, Business-Consaltant.'
+            )
           ),
+          _react2.default.createElement(_HomeMenu2.default, null),
           _react2.default.createElement(
-            'h2',
+            'footer',
             null,
-            'Let me drive your project!!'
-          ),
-          _react2.default.createElement(
-            'p',
-            { id: 'lead' },
-            'Freelance; Project Manager, Dev-Director, Business-Consaltant.'
-          )
-        ),
-        _react2.default.createElement(_HomeMenu2.default, null),
-        _react2.default.createElement(
-          'footer',
-          null,
-          _react2.default.createElement(
-            'p',
-            null,
-            'Tokyo, Japan.'
+            _react2.default.createElement(
+              'p',
+              null,
+              'Tokyo, Japan.'
+            )
           )
         )
       );
@@ -571,7 +586,7 @@ var Profile = function (_Component) {
           ),
           _react2.default.createElement(
             "ul",
-            null,
+            { id: "skill-info" },
             _react2.default.createElement(
               "li",
               null,
@@ -592,6 +607,39 @@ var Profile = function (_Component) {
                   "li",
                   { className: "skill-title pm-skill" },
                   "PMBOK Standards"
+                ),
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-etc" },
+                  "..."
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              _react2.default.createElement(
+                "ul",
+                { className: "skill-group" },
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-title doc-skill" },
+                  "PowerPoint"
+                ),
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-title doc-skill" },
+                  "Excel+VBA"
+                ),
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-title doc-skill" },
+                  "Access"
+                ),
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-title doc-skill" },
+                  "Word"
                 ),
                 _react2.default.createElement(
                   "li",
@@ -663,39 +711,6 @@ var Profile = function (_Component) {
                   "li",
                   { className: "skill-title web-skill" },
                   "Illustrator"
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-etc" },
-                  "..."
-                )
-              )
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              _react2.default.createElement(
-                "ul",
-                { className: "skill-group" },
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-title doc-skill" },
-                  "PowerPoint"
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-title doc-skill" },
-                  "Excel+VBA"
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-title doc-skill" },
-                  "Access"
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-title doc-skill" },
-                  "Word"
                 ),
                 _react2.default.createElement(
                   "li",

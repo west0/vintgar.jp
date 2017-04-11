@@ -1,7 +1,103 @@
+/*
+base-line: 16px
 
-#global-nav{
-  display:none;
+*/
+
+html {
+  font-size: 16px;
+  background-color: #f0f0f0;
+  font: 16px Arial;
 }
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover, a:active{
+  color: #fff;
+  text-decoration: underline;
+}
+
+a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+  margin: 0;
+  min-width: 320px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.page-component{
+  padding-top: 3rem;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 90%;
+}
+
+
+input, textarea {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.app-header {
+  background-color: #6F001B;
+  color: #F0F0F0;
+  font-family: 'Norican', cursive;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 900;
+  margin: 0;
+  padding: 20px 20px 20px 14px;
+  vertical-align: middle;
+}
+
+
+#global-nav {
+  background-color: rgba(0,0,0,0.4);
+  padding-top:0;
+  position: fixed;
+  z-index: 99;
+}
+
+#global-nav ul {
+  list-style: none none outside;
+  margin: 0;
+  padding:0.6rem 0 0.6rem 0;
+  width: 100%;
+}
+
+#global-nav li {
+  display:inline-block;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+}
+
+#global-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 0.875rem;
+  height: 1rem;
+  line-height: 0.875rem;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+#global-nav a:hover, #global-nav a:active {
+  background-color: rgba(255,255,255,0.5);
+}
+
 
 
 
@@ -9,8 +105,13 @@
 
 #home{
   background: url("images/home.jpg") center center / cover no-repeat fixed;
-  width: 100%;
   height: 100vh;
+  min-height: 320px;
+}
+
+#home-contents {
+  bottom: 0;
+  position: absolute;
 }
 
 #home h1, #home h2, #home p{
@@ -18,21 +119,34 @@
 }
 
 #home h1{
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  margin: 0;
+  padding: 0 0 0.8rem 0;
 }
 
 #home h2{
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
   line-height: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 #home p#lead{
   font-size: 0.75rem;
-  line-height: 1rem;
+  line-height: 0.75rem;
+  padding: 0;
+  margin: 0;
 }
 
-#home p{
+#home footer {
+  margin:0;
+  padding:0;
+background-color: #f00;
+}
+
+#home footer p{
   font-size: 0.75rem;
   line-height: 1rem;
 }
@@ -122,32 +236,27 @@
 /* /#service */
 
 /* #skills */
-  #skills ul {
-    list-style: none none outside;
-    margin:0;
-    padding:0;
-  }
-  
-  .skill-group {
-    background-color: #f00;
-    padding-left: 100px;
-    padding-top: 500px;
-    padding-bottom: 1rem;
+  #skill-info{
     border-top: 1px solid #000;
-
+    border-bottom: 1px solid #000;
+    list-style: none none outside;
+    margin: 0;
+    padding: 1rem 0 0 0;
   }
-  
+    
+  .skill-group {
+    padding: 0 0 1rem 0;
+  }
+
   .skill-group li {
     display: inline-block;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     margin: 0.1rem 0.2rem 0.1rem 0;
     padding: 0.1rem;
   }
   
   .skill-title {
-    background-color: #ddd;
-    border: 1px solid #000;
-    border-radius: 4px;
+    background-color: rgba(0,0,0,0.2);
   }
   
   .skill-etc {
@@ -160,64 +269,4 @@
 
 
 
-
-/*
-base-line: 16px
-
-*/
-
-html {
-  font-size: 16px;
-  background-color: #f0f0f0;
-  font: 16px Arial;
-}
-
-a{
-  color: #fff;
-  text-decoration: none;
-}
-
-a:hover, a:active{
-  color: #fff;
-  text-decoration: underline;
-}
-
-a:visited{
-  color: #fff;
-  text-decoration: none;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
-  margin: 0;
-  min-width: 320px;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-.page-component{
-  padding-top: 1rem;
-  padding-right: 5%;
-  padding-left: 5%;
-}
-
-
-input, textarea {
-  font-size: 14px;
-  padding: 10px;
-}
-
-.app-header {
-  background-color: #6F001B;
-  color: #F0F0F0;
-  font-family: 'Norican', cursive;
-  font-size: 46px;
-  font-style: normal;
-  font-weight: 900;
-  margin: 0;
-  padding: 20px 20px 20px 14px;
-  vertical-align: middle;
-}
 

@@ -71,32 +71,27 @@
 /* /#service */
 
 /* #skills */
-  #skills ul {
-    list-style: none none outside;
-    margin:0;
-    padding:0;
-  }
-  
-  .skill-group {
-    background-color: #f00;
-    padding-left: 100px;
-    padding-top: 500px;
-    padding-bottom: 1rem;
+  #skill-info{
     border-top: 1px solid #000;
-
+    border-bottom: 1px solid #000;
+    list-style: none none outside;
+    margin: 0;
+    padding: 1rem 0 0 0;
   }
-  
+    
+  .skill-group {
+    padding: 0 0 1rem 0;
+  }
+
   .skill-group li {
     display: inline-block;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     margin: 0.1rem 0.2rem 0.1rem 0;
     padding: 0.1rem;
   }
   
   .skill-title {
-    background-color: #ddd;
-    border: 1px solid #000;
-    border-radius: 4px;
+    background-color: rgba(0,0,0,0.2);
   }
   
   .skill-etc {

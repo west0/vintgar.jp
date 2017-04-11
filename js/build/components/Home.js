@@ -38,32 +38,36 @@ var Home = function (_Component) {
         'div',
         { id: 'home', className: 'page-component' },
         _react2.default.createElement(
-          'header',
-          null,
+          'div',
+          { id: 'home-contents' },
           _react2.default.createElement(
-            'h1',
+            'header',
             null,
-            'vintgar.jp'
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Let me drive your project!!'
+            ),
+            _react2.default.createElement(
+              'h2',
+              null,
+              'Yoshiro Nishimura; Freelancer.'
+            ),
+            _react2.default.createElement(
+              'p',
+              { id: 'lead' },
+              'Freelance; Project Manager, Dev-Director, Business-Consaltant.'
+            )
           ),
+          _react2.default.createElement(_HomeMenu2.default, null),
           _react2.default.createElement(
-            'h2',
+            'footer',
             null,
-            'Let me drive your project!!'
-          ),
-          _react2.default.createElement(
-            'p',
-            { id: 'lead' },
-            'Freelance; Project Manager, Dev-Director, Business-Consaltant.'
-          )
-        ),
-        _react2.default.createElement(_HomeMenu2.default, null),
-        _react2.default.createElement(
-          'footer',
-          null,
-          _react2.default.createElement(
-            'p',
-            null,
-            'Tokyo, Japan.'
+            _react2.default.createElement(
+              'p',
+              null,
+              'Tokyo, Japan.'
+            )
           )
         )
       );

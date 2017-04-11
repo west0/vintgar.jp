@@ -1,8 +1,13 @@
 
 #home{
   background: url("images/home.jpg") center center / cover no-repeat fixed;
-  width: 100%;
   height: 100vh;
+  min-height: 320px;
+}
+
+#home-contents {
+  bottom: 0;
+  position: absolute;
 }
 
 #home h1, #home h2, #home p{
@@ -10,21 +15,34 @@
 }
 
 #home h1{
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  margin: 0;
+  padding: 0 0 0.8rem 0;
 }
 
 #home h2{
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
   line-height: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 #home p#lead{
   font-size: 0.75rem;
-  line-height: 1rem;
+  line-height: 0.75rem;
+  padding: 0;
+  margin: 0;
 }
 
-#home p{
+#home footer {
+  margin:0;
+  padding:0;
+background-color: #f00;
+}
+
+#home footer p{
   font-size: 0.75rem;
   line-height: 1rem;
 }

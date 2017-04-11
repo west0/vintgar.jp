@@ -1,7 +1,42 @@
 
-#global-nav{
-  display:none;
+#global-nav {
+  background-color: rgba(0,0,0,0.4);
+  padding-top:0;
+  position: fixed;
+  z-index: 99;
 }
+
+#global-nav ul {
+  list-style: none none outside;
+  margin: 0;
+  padding:0.6rem 0 0.6rem 0;
+  width: 100%;
+}
+
+#global-nav li {
+  display:inline-block;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+}
+
+#global-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 0.875rem;
+  height: 1rem;
+  line-height: 0.875rem;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+#global-nav a:hover, #global-nav a:active {
+  background-color: rgba(255,255,255,0.5);
+}
+
 
 
 

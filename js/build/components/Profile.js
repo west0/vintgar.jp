@@ -182,7 +182,7 @@ var Profile = function (_Component) {
           ),
           _react2.default.createElement(
             "ul",
-            null,
+            { id: "skill-info" },
             _react2.default.createElement(
               "li",
               null,
@@ -203,6 +203,39 @@ var Profile = function (_Component) {
                   "li",
                   { className: "skill-title pm-skill" },
                   "PMBOK Standards"
+                ),
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-etc" },
+                  "..."
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              _react2.default.createElement(
+                "ul",
+                { className: "skill-group" },
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-title doc-skill" },
+                  "PowerPoint"
+                ),
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-title doc-skill" },
+                  "Excel+VBA"
+                ),
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-title doc-skill" },
+                  "Access"
+                ),
+                _react2.default.createElement(
+                  "li",
+                  { className: "skill-title doc-skill" },
+                  "Word"
                 ),
                 _react2.default.createElement(
                   "li",
@@ -274,39 +307,6 @@ var Profile = function (_Component) {
                   "li",
                   { className: "skill-title web-skill" },
                   "Illustrator"
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-etc" },
-                  "..."
-                )
-              )
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              _react2.default.createElement(
-                "ul",
-                { className: "skill-group" },
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-title doc-skill" },
-                  "PowerPoint"
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-title doc-skill" },
-                  "Excel+VBA"
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-title doc-skill" },
-                  "Access"
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { className: "skill-title doc-skill" },
-                  "Word"
                 ),
                 _react2.default.createElement(
                   "li",

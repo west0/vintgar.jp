@@ -14,14 +14,13 @@ class GlobalNav extends Component {
   render() {
     return (
 
-<nav id="global-nav">
+<nav id="global-nav" className="page-component">
   <ul>
-    <li onClick="">home</li>
-    <li onClick="">profile</li>
-    <li onClick="">works</li>
-    <li onClick="">contact</li>
+    <li onClick="#home"><a href="#home">home</a></li>
+    <li onClick="#profile"><a href="#profile">services</a></li>
+    <li onClick="#works"><a href="#">works</a></li>
+    <li onClick="#contact-form"><a href="#contact-form">contact</a></li>
   </ul>
-  <p>Global Navigation Component.</p>
 </nav>
 
     );

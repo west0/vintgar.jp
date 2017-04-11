@@ -16,15 +16,17 @@ class Home extends Component {
     return (
 
 <div id="home" className="page-component">
-  <header>
-    <h1>vintgar.jp</h1>
-    <h2>Let me drive your project!!</h2>
-    <p id="lead">Freelance; Project Manager, Dev-Director, Business-Consaltant.</p>
-  </header>
-  <HomeMenu />
-  <footer>
-    <p>Tokyo, Japan.</p>
-  </footer>
+  <div id="home-contents">
+    <header>
+      <h1>Let me drive your project!!</h1>
+      <h2>Yoshiro Nishimura; Freelancer.</h2>
+      <p id="lead">Freelance; Project Manager, Dev-Director, Business-Consaltant.</p>
+    </header>
+    <HomeMenu />
+    <footer>
+      <p>Tokyo, Japan.</p>
+    </footer>
+  </div>
 </div>
 
     );

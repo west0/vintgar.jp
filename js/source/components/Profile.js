@@ -58,12 +58,21 @@ class Profile extends Component {
 
   <section id="skills" className="profile-section">
     <h3>skills</h3>
-    <ul>
+    <ul id="skill-info">
       <li>
         <ul className="skill-group">
           <li className="skill-title pm-skill">PMP(ProjectManagementProfessional)[PMI]</li>
           <li className="skill-title pm-skill">ProjectManager[IPA.Japan]</li>
           <li className="skill-title pm-skill">PMBOK Standards</li>
+          <li className="skill-etc">...</li>
+        </ul>
+      </li>
+      <li>
+        <ul className="skill-group">
+          <li className="skill-title doc-skill">PowerPoint</li>
+          <li className="skill-title doc-skill">Excel+VBA</li>
+          <li className="skill-title doc-skill">Access</li>
+          <li className="skill-title doc-skill">Word</li>
           <li className="skill-etc">...</li>
         </ul>
       </li>
@@ -83,15 +92,6 @@ class Profile extends Component {
         <ul className="skill-group">
           <li className="skill-title web-skill">Photoshop</li>
           <li className="skill-title web-skill">Illustrator</li>
-          <li className="skill-etc">...</li>
-        </ul>
-      </li>
-      <li>
-        <ul className="skill-group">
-          <li className="skill-title doc-skill">PowerPoint</li>
-          <li className="skill-title doc-skill">Excel+VBA</li>
-          <li className="skill-title doc-skill">Access</li>
-          <li className="skill-title doc-skill">Word</li>
           <li className="skill-etc">...</li>
         </ul>
       </li>
