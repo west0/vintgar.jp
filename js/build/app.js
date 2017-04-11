@@ -20,6 +20,14 @@ var _Profile = require('./components/Profile');
 
 var _Profile2 = _interopRequireDefault(_Profile);
 
+var _Services = require('./components/Services');
+
+var _Services2 = _interopRequireDefault(_Services);
+
+var _Skills = require('./components/Skills');
+
+var _Skills2 = _interopRequireDefault(_Skills);
+
 var _ContactForm = require('./components/ContactForm');
 
 var _ContactForm2 = _interopRequireDefault(_ContactForm);
@@ -32,6 +40,8 @@ _reactDom2.default.render(_react2.default.createElement(
   _react2.default.createElement(_GlobalNav2.default, null),
   _react2.default.createElement(_Home2.default, null),
   _react2.default.createElement(_Profile2.default, null),
+  _react2.default.createElement(_Services2.default, null),
+  _react2.default.createElement(_Skills2.default, null),
   _react2.default.createElement(_ContactForm2.default, null),
   _react2.default.createElement(
     'p',

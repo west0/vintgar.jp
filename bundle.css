@@ -160,12 +160,6 @@ body::-webkit-scrollbar {
 */}
 
 
-/* common */
-  .profile-section {
-    margin-bottom: 4rem;
-  }
-
-
 /* #biography */
   #biography-list dt {
     border-top: 1px solid #000;
@@ -184,8 +178,6 @@ body::-webkit-scrollbar {
     border-bottom: 1px solid #000;
   }
 /* /#biography */
-
-
 /* #service */
   #services #service-img {
     width: 100%;
