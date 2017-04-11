@@ -16,9 +16,11 @@ class HomeMenu extends Component {
 
 <nav id ="home-menu">
   <ul>
-    <li><a href="#profile">Profile(Service)</a></li>
+    <li><a href="#profile">About me</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#skills">Skills</a></li>
   {/*  <li><a href="works">Works</a></li> */}
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact-form">Contact</a></li>
   </ul>
 </nav>
 

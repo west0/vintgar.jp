@@ -42,7 +42,7 @@ var HomeMenu = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#profile" },
-              "Profile(Service)"
+              "About me"
             )
           ),
           _react2.default.createElement(
@@ -50,7 +50,25 @@ var HomeMenu = function (_Component) {
             null,
             _react2.default.createElement(
               "a",
-              { href: "#contact" },
+              { href: "#services" },
+              "Services"
+            )
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            _react2.default.createElement(
+              "a",
+              { href: "#skills" },
+              "Skills"
+            )
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            _react2.default.createElement(
+              "a",
+              { href: "#contact-form" },
               "Contact"
             )
           )

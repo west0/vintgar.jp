@@ -18,14 +18,11 @@ class Home extends Component {
 <div id="home" className="page-component">
   <div id="home-contents">
     <header>
-      <h1>Let me drive your project!!</h1>
-      <h2>Yoshiro Nishimura; Freelancer.</h2>
-      <p id="lead">Freelance; Project Manager, Dev-Director, Business-Consaltant.</p>
+      <h1>そのプロジェクト、お手伝いします。</h1>
+      <h2>西村ヨシロウ: フリーランス</h2>
+      <p id="lead">プロジェクトマネジメント, 開発ディレクション, ビジネスコンサルティング, etc.</p>
     </header>
     <HomeMenu />
-    <footer>
-      <p>Tokyo, Japan.</p>
-    </footer>
   </div>
 </div>
 

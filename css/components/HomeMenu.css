@@ -1,10 +1,19 @@
 #home-menu ul{
   list-style: none none outside;
+  margin: 0;
+  padding: 0;
 }
 
 #home-menu ul li{
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1rem;
-}
+  margin: 0;
+  padding: 0 0 1rem 0;
+
+/*  font-size: 0.875rem;
+  line-height: 0.875rem;
+  margin: 0;
+  padding: 0.0625rem 0 1.0625rem 0;
+*/}
 
 

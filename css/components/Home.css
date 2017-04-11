@@ -3,11 +3,17 @@
   background: url("images/home.jpg") center center / cover no-repeat fixed;
   height: 100vh;
   min-height: 320px;
+  padding-top: 0;
 }
 
 #home-contents {
-  bottom: 0;
+  bottom: 3rem;
   position: absolute;
+  padding-right: 5%;
+}
+
+#home-contents header {
+
 }
 
 #home h1, #home h2, #home p{
@@ -15,37 +21,39 @@
 }
 
 #home h1{
-  font-size: 1.2rem;
-  line-height: 1.2rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
   margin: 0;
-  padding: 0 0 0.8rem 0;
+  padding: 0.25rem 0 1.25rem 0;
 }
 
 #home h2{
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1rem;
+  line-height: 0.875rem;
   margin: 0;
-  padding: 0;
+  padding: 0.0625rem 0 0.0625rem 0;
 }
 
 #home p#lead{
   font-size: 0.75rem;
   line-height: 0.75rem;
-  padding: 0;
-  margin: 0;
+  margin: 0 0 2rem 0;
+  padding: 0.125rem 0 0.125rem 0;
 }
 
+/*
 #home footer {
   margin:0;
   padding:0;
-background-color: #f00;
 }
 
 #home footer p{
   font-size: 0.75rem;
   line-height: 1rem;
+  margin: 0;
+  padding: 0;
 }
-
+*/
 
 
