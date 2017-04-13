@@ -18,9 +18,9 @@ class HomeMenu extends Component {
 
 <nav id ="home-menu">
   <ul>
-    <li><Link className="homemenu-link" to="services" spy={true} smooth={true} duration={500}>services</Link></li>
-    <li><Link className="homemenu-link" to="skills" spy={true} smooth={true} duration={500}>skills</Link></li>
-    <li><Link className="homemenu-link" to="contact-form" spy={true} smooth={true} duration={500}>contact</Link></li>
+    <li>&gt;&nbsp;<Link className="homemenu-link" to="services" spy={true} smooth={true} duration={500}>services</Link></li>
+    <li>&gt;&nbsp;<Link className="homemenu-link" to="skills" spy={true} smooth={true} duration={500}>skills</Link></li>
+    <li>&gt;&nbsp;<Link className="homemenu-link" to="contact-form" spy={true} smooth={true} duration={500}>contact</Link></li>
   </ul>
 </nav>
 

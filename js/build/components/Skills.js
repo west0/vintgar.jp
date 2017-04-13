@@ -35,7 +35,7 @@ var Skills = function (_Component) {
         { id: "skills", className: "page-component profile-section" },
         _react2.default.createElement(
           "h3",
-          null,
+          { className: "page-title" },
           "skills"
         ),
         _react2.default.createElement(

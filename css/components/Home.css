@@ -35,7 +35,7 @@
   padding: 0.0625rem 0 0.0625rem 0;
 }
 
-#home p#lead{
+#home #lead{
   font-size: 0.75rem;
   line-height: 0.75rem;
   margin: 0 0 2rem 0;

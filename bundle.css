@@ -30,50 +30,59 @@ a:visited{
 }
 
 .page-component{
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-right: 5%;
   padding-left: 5%;
   width: 90%;
-}#contact-form{
+}
+
+.page-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 0.25rem 0 0.25rem 0;
+}
+#contact-form{
   height: 120vh;
 }
-#global-nav {
-  background-color: rgba(0,0,0,0.4);
-  padding-top:0;
-  position: fixed;
-  z-index: 99;
-}
 
-#global-nav ul {
-  list-style: none none outside;
-  margin: 0;
-  padding:0.6rem 0 0.6rem 0;
-  width: 100%;
-}
+/* global-nav */
+  #global-nav {
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 0;
+    position: fixed;
+  }
 
-#global-nav li {
-  display:inline-block;
-  margin: 0;
-  padding: 0;
-  width: 25%;
-}
+  #global-nav ul {
+    list-style: none none outside;
+    margin: 0;
+    padding: 0.6rem 0 0.6rem 0;
+    width: 100%;
+  }
 
-#global-nav .global-link {
-  color: #fff;
-  display: inline-block;
-  font-size: 0.875rem;
-  height: 1rem;
-  line-height: 0.875rem;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-}
+  #global-nav li {
+    display:inline-block;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+  }
 
-#global-nav .global-link:hover, #global-nav .global-link:active {
-  background-color: rgba(255,255,255,0.5);
-}
+  #global-nav .global-link {
+    color: #fff;
+    display: inline-block;
+    font-size: 0.875rem;
+    height: 1rem;
+    line-height: 0.875rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  #global-nav .global-link:hover, #global-nav .global-link:active {
+    background-color: rgba(255,255,255,0.5);
+  }
 
 
 
@@ -115,7 +124,7 @@ a:visited{
   padding: 0.0625rem 0 0.0625rem 0;
 }
 
-#home p#lead{
+#home #lead{
   font-size: 0.75rem;
   line-height: 0.75rem;
   margin: 0 0 2rem 0;
@@ -132,6 +141,7 @@ a:visited{
 }
 
 #home-menu ul li{
+  color: #fff;
   font-size: 1rem;
   line-height: 1rem;
   margin: 0;
@@ -149,6 +159,7 @@ a:visited{
 }
 
 /* #biography */
+
   #biography-list dt {
     border-top: 1px solid #000;
     font-size: 0.875rem;
@@ -184,10 +195,11 @@ a:visited{
 
   #service-list dt {
     border-top: 1px solid #000;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: bold;
+    line-height: 0.875rem;
     margin:0;
-    padding: 1rem 0 0 0;
+    padding: 1rem 0 0.125rem 0;
   }
 
   #service-list dd {
@@ -239,7 +251,7 @@ a:visited{
   }
   
   .skill-title {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.15);
   }
   
   .skill-etc {

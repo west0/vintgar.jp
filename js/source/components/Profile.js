@@ -15,7 +15,7 @@ class Profile extends Component {
     return (
 
 <section id="profile" className="page-component profile-section">
-  <h3>profile</h3>
+  <h3 className="page-title">profile</h3>
   <dl id="biography-list">
     <dt className="item-title">name</dt>
     <dd className="item-value">西村 ヨシロウ</dd>

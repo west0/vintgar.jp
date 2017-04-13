@@ -41,6 +41,7 @@ var HomeMenu = function (_Component) {
           _react2.default.createElement(
             'li',
             null,
+            '>\xA0',
             _react2.default.createElement(
               _reactScroll.Link,
               { className: 'homemenu-link', to: 'services', spy: true, smooth: true, duration: 500 },
@@ -50,6 +51,7 @@ var HomeMenu = function (_Component) {
           _react2.default.createElement(
             'li',
             null,
+            '>\xA0',
             _react2.default.createElement(
               _reactScroll.Link,
               { className: 'homemenu-link', to: 'skills', spy: true, smooth: true, duration: 500 },
@@ -59,6 +61,7 @@ var HomeMenu = function (_Component) {
           _react2.default.createElement(
             'li',
             null,
+            '>\xA0',
             _react2.default.createElement(
               _reactScroll.Link,
               { className: 'homemenu-link', to: 'contact-form', spy: true, smooth: true, duration: 500 },

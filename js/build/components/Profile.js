@@ -35,7 +35,7 @@ var Profile = function (_Component) {
         { id: "profile", className: "page-component profile-section" },
         _react2.default.createElement(
           "h3",
-          null,
+          { className: "page-title" },
           "profile"
         ),
         _react2.default.createElement(

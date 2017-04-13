@@ -30,8 +30,15 @@ a:visited{
 }
 
 .page-component{
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-right: 5%;
   padding-left: 5%;
   width: 90%;
+}
+
+.page-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 0.25rem 0 0.25rem 0;
 }

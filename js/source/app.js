@@ -13,13 +13,12 @@ import ContactForm from './components/ContactForm';
 
 ReactDOM.render(
   <div>
-    <GlobalNav />
     <Home />
     <Profile />
     <Services />
     <Skills />
     <ContactForm />
-    <p>scripts by app.js</p>
+    <GlobalNav />
   </div>,
   document.getElementById('app')
 );

@@ -35,13 +35,8 @@ var Services = function (_Component) {
         { id: "services", className: "page-component profile-section" },
         _react2.default.createElement(
           "h3",
-          null,
+          { className: "page-title" },
           "service"
-        ),
-        _react2.default.createElement(
-          "div",
-          null,
-          _react2.default.createElement("img", { id: "service-img", src: "images/service.png", alt: "project management, dev-direction, business-consulting" })
         ),
         _react2.default.createElement(
           "p",

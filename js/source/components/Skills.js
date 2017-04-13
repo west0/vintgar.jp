@@ -15,7 +15,7 @@ class Skills extends Component {
     return (
 
 <section id="skills" className="page-component profile-section">
-  <h3>skills</h3>
+  <h3 className="page-title">skills</h3>
   <ul id="skill-info">
     <li>
       <ul className="skill-group">

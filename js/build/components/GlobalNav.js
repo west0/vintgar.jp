@@ -12,6 +12,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactScroll = require('react-scroll');
 
+var _reactHeadroom = require('react-headroom');
+
+var _reactHeadroom2 = _interopRequireDefault(_reactHeadroom);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33,7 +37,7 @@ var GlobalNav = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'nav',
+        _reactHeadroom2.default,
         { id: 'global-nav', className: 'page-component' },
         _react2.default.createElement(
           'ul',

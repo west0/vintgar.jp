@@ -15,7 +15,7 @@ class ContactForm extends Component {
   render() {
     return (
       <form id="contact-form" name="contact-form" className="page-component">
-        <h3>Contact Form</h3>
+        <h3 className="page-title">Contact Form</h3>
         <FormInput />
         <FormInput />
         <p>If you will not get any replies in two days, send messages again.</p>
