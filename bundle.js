@@ -220,7 +220,7 @@ var GlobalNav = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         _reactHeadroom2.default,
-        { id: 'global-nav', className: 'root-component' },
+        { id: 'global-nav' },
         _react2.default.createElement(
           'ul',
           null,
