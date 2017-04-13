@@ -32,7 +32,7 @@ var Profile = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "section",
-        { id: "profile", className: "page-component profile-section" },
+        { id: "profile", className: "page-component" },
         _react2.default.createElement(
           "h3",
           { className: "page-title" },

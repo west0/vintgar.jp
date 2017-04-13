@@ -36,7 +36,7 @@ var Home = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { id: 'home', className: 'page-component' },
+        { id: 'home', className: 'root-component' },
         _react2.default.createElement(
           'div',
           { id: 'home-contents' },

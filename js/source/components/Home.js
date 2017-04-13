@@ -15,7 +15,7 @@ class Home extends Component {
   render() {
     return (
 
-<div id="home" className="page-component">
+<div id="home" className="root-component">
   <div id="home-contents">
     <header>
       <h1>そのプロジェクト、お手伝いします。</h1>

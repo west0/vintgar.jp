@@ -38,10 +38,14 @@ _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
   _react2.default.createElement(_Home2.default, null),
-  _react2.default.createElement(_Profile2.default, null),
-  _react2.default.createElement(_Services2.default, null),
-  _react2.default.createElement(_Skills2.default, null),
-  _react2.default.createElement(_ContactForm2.default, null),
+  _react2.default.createElement(
+    'div',
+    { id: 'main-contents', className: 'root-component' },
+    _react2.default.createElement(_Profile2.default, null),
+    _react2.default.createElement(_Services2.default, null),
+    _react2.default.createElement(_Skills2.default, null),
+    _react2.default.createElement(_ContactForm2.default, null)
+  ),
   _react2.default.createElement(_GlobalNav2.default, null)
 ), document.getElementById('app'));
 

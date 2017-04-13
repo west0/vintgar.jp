@@ -39,10 +39,14 @@ _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
   _react2.default.createElement(_Home2.default, null),
-  _react2.default.createElement(_Profile2.default, null),
-  _react2.default.createElement(_Services2.default, null),
-  _react2.default.createElement(_Skills2.default, null),
-  _react2.default.createElement(_ContactForm2.default, null),
+  _react2.default.createElement(
+    'div',
+    { id: 'main-contents', className: 'root-component' },
+    _react2.default.createElement(_Profile2.default, null),
+    _react2.default.createElement(_Services2.default, null),
+    _react2.default.createElement(_Skills2.default, null),
+    _react2.default.createElement(_ContactForm2.default, null)
+  ),
   _react2.default.createElement(_GlobalNav2.default, null)
 ), document.getElementById('app'));
 
@@ -216,7 +220,7 @@ var GlobalNav = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         _reactHeadroom2.default,
-        { id: 'global-nav', className: 'page-component' },
+        { id: 'global-nav', className: 'root-component' },
         _react2.default.createElement(
           'ul',
           null,
@@ -304,7 +308,7 @@ var Home = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { id: 'home', className: 'page-component' },
+        { id: 'home', className: 'root-component' },
         _react2.default.createElement(
           'div',
           { id: 'home-contents' },
@@ -452,7 +456,7 @@ var Profile = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "section",
-        { id: "profile", className: "page-component profile-section" },
+        { id: "profile", className: "page-component" },
         _react2.default.createElement(
           "h3",
           { className: "page-title" },
@@ -558,7 +562,7 @@ var Services = function (_Component) {
         ),
         _react2.default.createElement(
           "p",
-          null,
+          { id: "service-description" },
           "\u30D5\u30EA\u30FC\u30E9\u30F3\u30B9\u3067\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u63A8\u9032\u3092\u304A\u624B\u4F1D\u3044\u3057\u3066\u3044\u307E\u3059\u3002",
           _react2.default.createElement("br", null),
           "\u7686\u69D8\u306E\u8AB2\u984C\u306B\u5408\u308F\u305B\u3066\u3001\u4E3B\u306B\u4EE5\u4E0B\u306E\u8981\u7D20\u3092\u67D4\u8EDF\u306B\u7D44\u307F\u5408\u308F\u305B\u3066\u304A\u624B\u4F1D\u3044\u3044\u305F\u3057\u307E\u3059\u3002\u307E\u305A\u306F\u304A\u6C17\u8EFD\u306B\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002"

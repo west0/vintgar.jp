@@ -1,3 +1,8 @@
+/*
+breakpoint: 320, 600, 960, 1200
+
+*/
+
 html {
   font-size: 16px; /* baseline */
   background-color: #f0f0f0;
@@ -29,16 +34,56 @@ a:visited{
   text-decoration: none;
 }
 
-.page-component{
-  padding-top: 2rem;
+.root-component {
   padding-right: 5%;
   padding-left: 5%;
   width: 90%;
 }
 
+.page-component {
+  margin-bottom: 4rem;
+}
+
+
 .page-title{
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.5rem;
-  padding: 0.25rem 0 0.25rem 0;
+  margin: 0;
+  padding: 0.25rem 0 1.25rem 0;
+}
+
+
+@media all and (min-width:600px){
+  .root-component {
+    padding-right: 2.67%;
+    padding-left: 2.67%;
+    width: 94.66%;
+  }
+  
+  #main-contents {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  
+  .page-component {
+    margin-bottom: 5rem;
+    width: 48.59%;
+  }
+/*  
+  .page-component:nth-child(2n) {
+    background-color: #99ffff;
+  }
+
+  .page-component:nth-child(2n+1) {
+    background-color: #ff99ff;
+  }
+*/
 }

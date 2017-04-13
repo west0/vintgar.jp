@@ -16,7 +16,7 @@ class GlobalNav extends Component {
   render() {
     return (
 
-<Headroom id="global-nav" className="page-component">
+<Headroom id="global-nav" className="root-component">
   <ul>
     <li><Link className="global-link" to="home" spy={true} smooth={true} duration={500}>home</Link></li>
     <li><Link className="global-link" to="services" spy={true} smooth={true} duration={500}>services</Link></li>

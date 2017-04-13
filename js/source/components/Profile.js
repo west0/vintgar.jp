@@ -14,7 +14,7 @@ class Profile extends Component {
   render() {
     return (
 
-<section id="profile" className="page-component profile-section">
+<section id="profile" className="page-component">
   <h3 className="page-title">profile</h3>
   <dl id="biography-list">
     <dt className="item-title">name</dt>

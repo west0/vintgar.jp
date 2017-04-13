@@ -14,10 +14,12 @@ import ContactForm from './components/ContactForm';
 ReactDOM.render(
   <div>
     <Home />
-    <Profile />
-    <Services />
-    <Skills />
-    <ContactForm />
+    <div id="main-contents" className="root-component">
+      <Profile />
+      <Services />
+      <Skills />
+      <ContactForm />
+    </div>
     <GlobalNav />
   </div>,
   document.getElementById('app')

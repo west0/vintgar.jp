@@ -17,7 +17,7 @@ class Services extends Component {
 <section id="services" className="page-component profile-section">
   <h3 className="page-title">service</h3>
 {/*  <div><img id="service-img" src="images/service.png" alt="project management, dev-direction, business-consulting" /></div>*/}
-  <p>
+  <p id="service-description">
     フリーランスでプロジェクト推進をお手伝いしています。<br />皆様の課題に合わせて、主に以下の要素を柔軟に組み合わせてお手伝いいたします。まずはお気軽にご相談ください。
   </p>
   <dl id="service-list">
