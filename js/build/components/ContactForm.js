@@ -36,7 +36,7 @@ var ContactForm = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'form',
-        { id: 'contact-form' },
+        { id: 'contact-form', className: 'page-component' },
         _react2.default.createElement(
           'h3',
           null,

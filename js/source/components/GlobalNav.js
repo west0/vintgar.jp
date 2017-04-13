@@ -18,7 +18,7 @@ class GlobalNav extends Component {
   <ul>
     <li onClick="#home"><a href="#home">home</a></li>
     <li onClick="#profile"><a href="#profile">services</a></li>
-    <li onClick="#works"><a href="#">works</a></li>
+    <li onClick="#skills"><a href="#skills">skills</a></li>
     <li onClick="#contact-form"><a href="#contact-form">contact</a></li>
   </ul>
 </nav>

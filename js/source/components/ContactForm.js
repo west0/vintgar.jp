@@ -14,7 +14,7 @@ class ContactForm extends Component {
   }
   render() {
     return (
-      <form id="contact-form">
+      <form id="contact-form" className="page-component">
         <h3>Contact Form</h3>
         <FormInput />
         <FormInput />

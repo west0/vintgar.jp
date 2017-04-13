@@ -48,7 +48,7 @@ var Services = function (_Component) {
           null,
           "\u30D5\u30EA\u30FC\u30E9\u30F3\u30B9\u3067\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u63A8\u9032\u3092\u304A\u624B\u4F1D\u3044\u3057\u3066\u3044\u307E\u3059\u3002",
           _react2.default.createElement("br", null),
-          "\u4E3B\u306B\u4EE5\u4E0B\u306E3\u8981\u7D20\u3092\u67D4\u8EDF\u306B\u7D44\u307F\u5408\u308F\u305B\u3066\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306B\u53C2\u753B\u3057\u3066\u3044\u307E\u3059\u306E\u3067\u3001\u304A\u6C17\u8EFD\u306B\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002"
+          "\u7686\u69D8\u306E\u8AB2\u984C\u306B\u5408\u308F\u305B\u3066\u3001\u4E3B\u306B\u4EE5\u4E0B\u306E\u8981\u7D20\u3092\u67D4\u8EDF\u306B\u7D44\u307F\u5408\u308F\u305B\u3066\u304A\u624B\u4F1D\u3044\u3044\u305F\u3057\u307E\u3059\u3002\u307E\u305A\u306F\u304A\u6C17\u8EFD\u306B\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002"
         ),
         _react2.default.createElement(
           "dl",
@@ -56,7 +56,7 @@ var Services = function (_Component) {
           _react2.default.createElement(
             "dt",
             null,
-            "Project Management"
+            "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u30DE\u30CD\u30B8\u30E1\u30F3\u30C8"
           ),
           _react2.default.createElement(
             "dd",
@@ -68,14 +68,14 @@ var Services = function (_Component) {
             ),
             _react2.default.createElement(
               "p",
-              { id: "pm-note" },
+              { id: "service-note" },
               "* [Certification] PMP(PMI), ProjectManager(IPA.Japan)"
             )
           ),
           _react2.default.createElement(
             "dt",
             null,
-            "Dev-Direction"
+            "\u958B\u767A\u30C7\u30A3\u30EC\u30AF\u30B7\u30E7\u30F3"
           ),
           _react2.default.createElement(
             "dd",
@@ -83,13 +83,18 @@ var Services = function (_Component) {
             _react2.default.createElement(
               "p",
               { className: "detail" },
-              "\u9867\u5BA2\u63D0\u6848, \u8981\u4EF6\u5B9A\u7FA9, \u9867\u5BA2\u5BFE\u5FDC, \u958B\u767A\u30C7\u30A3\u30EC\u30AF\u30B7\u30E7\u30F3, \u8AB2\u984C\u7BA1\u7406, \u30C6\u30B9\u30C8, \u7D0D\u54C1 etc."
+              "\u9867\u5BA2\u63D0\u6848/\u5BFE\u5FDC, \u8981\u4EF6\u5B9A\u7FA9, \u958B\u767A\u30C7\u30A3\u30EC\u30AF\u30B7\u30E7\u30F3/\u8AB2\u984C\u7BA1\u7406, \u30C6\u30B9\u30C8 etc."
+            ),
+            _react2.default.createElement(
+              "p",
+              { id: "service-note" },
+              "* [\u5BFE\u8C61]Web\u30B5\u30A4\u30C8, Smartphone\u30A2\u30D7\u30EA, \u305D\u306E\u4ED6\u30B7\u30B9\u30C6\u30E0"
             )
           ),
           _react2.default.createElement(
             "dt",
             null,
-            "Business Consulting"
+            "\u30D3\u30B8\u30CD\u30B9\u30B3\u30F3\u30B5\u30EB\u30C6\u30A3\u30F3\u30B0"
           ),
           _react2.default.createElement(
             "dd",
@@ -97,13 +102,13 @@ var Services = function (_Component) {
             _react2.default.createElement(
               "p",
               { className: "detail" },
-              "\u696D\u52D9\u30D5\u30ED\u30FC\u69CB\u7BC9/\u6539\u5584, \u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u4F5C\u6210, \u554F\u984C\u6574\u7406/\u5206\u6790, \u89E3\u6C7A\u7B56\u7B56\u5B9A/\u63D0\u6848 etc."
+              "\u696D\u52D9\u30D5\u30ED\u30FC\u69CB\u7BC9/\u6539\u5584, \u8CC7\u6599\u4F5C\u6210, \u554F\u984C\u6574\u7406/\u5206\u6790, \u89E3\u6C7A\u7B56\u63D0\u6848/\u5B9F\u884C etc."
             )
           ),
           _react2.default.createElement(
             "dt",
             { className: "programming" },
-            "Programming"
+            "\u30A8\u30F3\u30B8\u30CB\u30A2\u696D\u52D9"
           ),
           _react2.default.createElement(
             "dd",
@@ -111,7 +116,7 @@ var Services = function (_Component) {
             _react2.default.createElement(
               "p",
               { className: "detail" },
-              "out of service."
+              "\u6280\u8853\u5B9F\u52D9\u306E\u63D0\u4F9B\u306F\u7D42\u4E86\u3057\u307E\u3057\u305F\u3002"
             )
           )
         )

@@ -44,42 +44,42 @@ var Profile = function (_Component) {
           _react2.default.createElement(
             "dt",
             { className: "item-title" },
-            "Name"
+            "name"
           ),
           _react2.default.createElement(
             "dd",
             { className: "item-value" },
-            "Yoshiro Nishimura"
+            "\u897F\u6751 \u30E8\u30B7\u30ED\u30A6"
           ),
           _react2.default.createElement(
             "dt",
             { className: "item-title" },
-            "Sex"
+            "sex"
           ),
           _react2.default.createElement(
             "dd",
             { className: "item-value" },
-            "Male"
+            "\u7537\u6027"
           ),
           _react2.default.createElement(
             "dt",
             { className: "item-title" },
-            "Age"
+            "age"
           ),
           _react2.default.createElement(
             "dd",
             { className: "item-value" },
-            "30s"
+            "30\u4EE3"
           ),
           _react2.default.createElement(
             "dt",
             { className: "item-title" },
-            "Live"
+            "place"
           ),
           _react2.default.createElement(
             "dd",
             { className: "item-value" },
-            "Tokyo, Japan"
+            "\u6771\u4EAC\u8FD1\u90CA(\u9060\u65B9\u306F\u5FDC\u76F8\u8AC7)"
           )
         )
       );

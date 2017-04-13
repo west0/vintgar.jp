@@ -25,7 +25,7 @@
   #service-list dd:last-child {
     border-bottom: 1px solid #000;
   }
-  #service-list #pm-note {
+  #service-list #service-note {
     font-size: 0.625rem;
     line-height: 1rem;
     margin:0;

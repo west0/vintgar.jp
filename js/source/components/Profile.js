@@ -17,14 +17,14 @@ class Profile extends Component {
 <section id="profile" className="page-component profile-section">
   <h3>profile</h3>
   <dl id="biography-list">
-    <dt className="item-title">Name</dt>
-    <dd className="item-value">Yoshiro Nishimura</dd>
-    <dt className="item-title">Sex</dt>
-    <dd className="item-value">Male</dd>
-    <dt className="item-title">Age</dt>
-    <dd className="item-value">30s</dd>
-    <dt className="item-title">Live</dt>
-    <dd className="item-value">Tokyo, Japan</dd>
+    <dt className="item-title">name</dt>
+    <dd className="item-value">西村 ヨシロウ</dd>
+    <dt className="item-title">sex</dt>
+    <dd className="item-value">男性</dd>
+    <dt className="item-title">age</dt>
+    <dd className="item-value">30代</dd>
+    <dt className="item-title">place</dt>
+    <dd className="item-value">東京近郊(遠方は応相談)</dd>
   </dl>
 </section>
 

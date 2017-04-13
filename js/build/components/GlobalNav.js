@@ -56,11 +56,11 @@ var GlobalNav = function (_Component) {
           ),
           _react2.default.createElement(
             "li",
-            { onClick: "#works" },
+            { onClick: "#skills" },
             _react2.default.createElement(
               "a",
-              { href: "#" },
-              "works"
+              { href: "#skills" },
+              "skills"
             )
           ),
           _react2.default.createElement(
