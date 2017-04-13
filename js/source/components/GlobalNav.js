@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, {Component} from 'react';
+import {Link} from 'react-scroll';
 
 type Props = {
   hoge: Array<Object>,
@@ -16,10 +17,10 @@ class GlobalNav extends Component {
 
 <nav id="global-nav" className="page-component">
   <ul>
-    <li onClick="#home"><a href="#home">home</a></li>
-    <li onClick="#profile"><a href="#profile">services</a></li>
-    <li onClick="#skills"><a href="#skills">skills</a></li>
-    <li onClick="#contact-form"><a href="#contact-form">contact</a></li>
+    <li><Link className="global-link" to="home" spy={true} smooth={true} duration={500}>home</Link></li>
+    <li><Link className="global-link" to="services" spy={true} smooth={true} duration={500}>services</Link></li>
+    <li><Link className="global-link" to="skills" spy={true} smooth={true} duration={500}>skills</Link></li>
+    <li><Link className="global-link" to="contact-form" spy={true} smooth={true} duration={500}>contact</Link></li>
   </ul>
 </nav>
 

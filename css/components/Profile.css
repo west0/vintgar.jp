@@ -15,4 +15,10 @@
   #biography-list dd:last-child {
     border-bottom: 1px solid #000;
   }
+  
+  .biography-note {
+    font-size:0.75rem;
+    line-height: 1rem;
+    padding-left: 1rem;
+  }
 /* /#biography */

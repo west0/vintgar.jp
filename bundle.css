@@ -34,6 +34,8 @@ a:visited{
   padding-right: 5%;
   padding-left: 5%;
   width: 90%;
+}#contact-form{
+  height: 120vh;
 }
 #global-nav {
   background-color: rgba(0,0,0,0.4);
@@ -56,7 +58,7 @@ a:visited{
   width: 25%;
 }
 
-#global-nav a {
+#global-nav .global-link {
   color: #fff;
   display: inline-block;
   font-size: 0.875rem;
@@ -69,10 +71,9 @@ a:visited{
   width: 100%;
 }
 
-#global-nav a:hover, #global-nav a:active {
+#global-nav .global-link:hover, #global-nav .global-link:active {
   background-color: rgba(255,255,255,0.5);
 }
-
 
 
 
@@ -121,19 +122,7 @@ a:visited{
   padding: 0.125rem 0 0.125rem 0;
 }
 
-/*
-#home footer {
-  margin:0;
-  padding:0;
-}
 
-#home footer p{
-  font-size: 0.75rem;
-  line-height: 1rem;
-  margin: 0;
-  padding: 0;
-}
-*/
 
 
 #home-menu ul{
@@ -147,13 +136,17 @@ a:visited{
   line-height: 1rem;
   margin: 0;
   padding: 0 0 1rem 0;
+}
 
-/*  font-size: 0.875rem;
-  line-height: 0.875rem;
-  margin: 0;
-  padding: 0.0625rem 0 1.0625rem 0;
-*/}
+.homemenu-link {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1rem;
+}
 
+.homemenu-link:hover, .homemenu-link:active {
+  text-decoration: underline;
+}
 
 /* #biography */
   #biography-list dt {
@@ -171,6 +164,12 @@ a:visited{
 
   #biography-list dd:last-child {
     border-bottom: 1px solid #000;
+  }
+  
+  .biography-note {
+    font-size:0.75rem;
+    line-height: 1rem;
+    padding-left: 1rem;
   }
 /* /#biography */
 /* #service */

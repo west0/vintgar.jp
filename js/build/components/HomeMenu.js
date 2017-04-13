@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -6,9 +6,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactScroll = require('react-scroll');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,48 +30,39 @@ var HomeMenu = function (_Component) {
   }
 
   _createClass(HomeMenu, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "nav",
-        { id: "home-menu" },
+        'nav',
+        { id: 'home-menu' },
         _react2.default.createElement(
-          "ul",
+          'ul',
           null,
           _react2.default.createElement(
-            "li",
+            'li',
             null,
             _react2.default.createElement(
-              "a",
-              { href: "#profile" },
-              "About me"
+              _reactScroll.Link,
+              { className: 'homemenu-link', to: 'services', spy: true, smooth: true, duration: 500 },
+              'services'
             )
           ),
           _react2.default.createElement(
-            "li",
+            'li',
             null,
             _react2.default.createElement(
-              "a",
-              { href: "#services" },
-              "Services"
+              _reactScroll.Link,
+              { className: 'homemenu-link', to: 'skills', spy: true, smooth: true, duration: 500 },
+              'skills'
             )
           ),
           _react2.default.createElement(
-            "li",
+            'li',
             null,
             _react2.default.createElement(
-              "a",
-              { href: "#skills" },
-              "Skills"
-            )
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "#contact-form" },
-              "Contact"
+              _reactScroll.Link,
+              { className: 'homemenu-link', to: 'contact-form', spy: true, smooth: true, duration: 500 },
+              'contact'
             )
           )
         )

@@ -9,11 +9,15 @@
   line-height: 1rem;
   margin: 0;
   padding: 0 0 1rem 0;
+}
 
-/*  font-size: 0.875rem;
-  line-height: 0.875rem;
-  margin: 0;
-  padding: 0.0625rem 0 1.0625rem 0;
-*/}
+.homemenu-link {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1rem;
+}
 
+.homemenu-link:hover, .homemenu-link:active {
+  text-decoration: underline;
+}
 

@@ -24,7 +24,7 @@ class Profile extends Component {
     <dt className="item-title">age</dt>
     <dd className="item-value">30代</dd>
     <dt className="item-title">place</dt>
-    <dd className="item-value">東京近郊(遠方は応相談)</dd>
+    <dd className="item-value">東京近郊<small className="biography-note">※遠方は応相談</small></dd>
   </dl>
 </section>
 

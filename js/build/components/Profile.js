@@ -79,7 +79,12 @@ var Profile = function (_Component) {
           _react2.default.createElement(
             "dd",
             { className: "item-value" },
-            "\u6771\u4EAC\u8FD1\u90CA(\u9060\u65B9\u306F\u5FDC\u76F8\u8AC7)"
+            "\u6771\u4EAC\u8FD1\u90CA",
+            _react2.default.createElement(
+              "small",
+              { className: "biography-note" },
+              "\u203B\u9060\u65B9\u306F\u5FDC\u76F8\u8AC7"
+            )
           )
         )
       );

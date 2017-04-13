@@ -20,7 +20,7 @@
   width: 25%;
 }
 
-#global-nav a {
+#global-nav .global-link {
   color: #fff;
   display: inline-block;
   font-size: 0.875rem;
@@ -33,10 +33,9 @@
   width: 100%;
 }
 
-#global-nav a:hover, #global-nav a:active {
+#global-nav .global-link:hover, #global-nav .global-link:active {
   background-color: rgba(255,255,255,0.5);
 }
-
 
 
 

@@ -1,6 +1,8 @@
 /* @flow */
 
 import React, {Component} from 'react';
+import {Link} from 'react-scroll';
+
 
 type Props = {
   hoge: Array<Object>,
@@ -16,11 +18,9 @@ class HomeMenu extends Component {
 
 <nav id ="home-menu">
   <ul>
-    <li><a href="#profile">About me</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#skills">Skills</a></li>
-  {/*  <li><a href="works">Works</a></li> */}
-    <li><a href="#contact-form">Contact</a></li>
+    <li><Link className="homemenu-link" to="services" spy={true} smooth={true} duration={500}>services</Link></li>
+    <li><Link className="homemenu-link" to="skills" spy={true} smooth={true} duration={500}>skills</Link></li>
+    <li><Link className="homemenu-link" to="contact-form" spy={true} smooth={true} duration={500}>contact</Link></li>
   </ul>
 </nav>
 
