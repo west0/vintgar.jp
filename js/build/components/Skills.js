@@ -121,7 +121,7 @@ var Skills = function (_Component) {
               _react2.default.createElement(
                 "li",
                 { className: "skill-title tech-skill" },
-                "JavaScript(+React+Redux/flux,etc.)"
+                "JavaScript(+React+Redux/Flux,etc.)"
               ),
               _react2.default.createElement(
                 "li",

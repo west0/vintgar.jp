@@ -38,7 +38,7 @@ class Skills extends Component {
       <ul className="skill-group">
         <li className="skill-title tech-skill">Python</li>
         <li className="skill-title tech-skill">PHP</li>
-        <li className="skill-title tech-skill">JavaScript(+React+Redux/flux,etc.)</li>
+        <li className="skill-title tech-skill">JavaScript(+React+Redux/Flux,etc.)</li>
         <li className="skill-title tech-skill">HTML5</li>
         <li className="skill-title tech-skill">CSS3</li>
         <li className="skill-title tech-skill">Linux</li>

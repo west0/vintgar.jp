@@ -14,6 +14,10 @@ var _FormInput = require('./FormInput');
 
 var _FormInput2 = _interopRequireDefault(_FormInput);
 
+var _Button = require('./Button');
+
+var _Button2 = _interopRequireDefault(_Button);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -42,8 +46,67 @@ var ContactForm = function (_Component) {
           { className: 'page-title' },
           'Contact Form'
         ),
-        _react2.default.createElement(_FormInput2.default, null),
-        _react2.default.createElement(_FormInput2.default, null),
+        _react2.default.createElement(
+          'p',
+          { id: 'form-legends' },
+          '*\xA0\u5FC5\u9808\u9805\u76EE'
+        ),
+        _react2.default.createElement(
+          'ul',
+          { id: 'contact-forms' },
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(_FormInput2.default, { formId: 'contact-name', type: 'name', 'max-length': '24', label: 'name' }),
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'contact-name' },
+              'name\xA0*'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'contact-note' },
+              '24\u6587\u5B57'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(_FormInput2.default, { formId: 'contact-mail', type: 'mail', 'max-lenght': '48', label: 'e-mail' }),
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'contact-mail' },
+              'e-mail\xA0*'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'contact-note' },
+              '\u534A\u89D248\u6587\u5B57'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(_FormInput2.default, { formId: 'contact-message', type: 'message', 'max-length': '256', label: '' }),
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'contact-message' },
+              'message\xA0*'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'contact-note' },
+              '128\u6587\u5B57'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _Button2.default,
+          {
+            onClick: console.log('clicked')
+          },
+          'ok'
+        ),
         _react2.default.createElement(
           'p',
           null,

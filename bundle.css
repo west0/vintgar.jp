@@ -119,9 +119,95 @@ a:visited{
   }
 }
 
-#contact-form{
-
+input, button, textarea, select {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
+
+#contact-forms {
+  list-style: none none outside;
+  padding: 0;
+  margin: 0;
+}
+
+#form-legends {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  margin: 0;
+  padding: 0 0 2.25rem 0;
+  text-align: right;
+}
+
+#contact-forms li{
+  margin: 0;
+  padding: 0 0 2rem 0;
+  position: relative;
+}
+
+#contact-forms label, #contact-forms input, contact-forms textarea {
+  display: block;
+}
+
+#contact-forms label {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  margin: 0;
+  padding: 0 0 0.25rem 0;
+  position: absolute;
+  top: -1rem;
+}
+
+#contact-forms input, #contact-forms textarea {
+  background-color: rgba(0,0,0,0.05);
+  border-bottom: 1px solid #000;
+  font-size: 1rem;
+  padding:0.5rem 0 0.5rem 0; 
+  width: 100%;
+}
+
+#contact-name {
+  max-width: 24rem;
+}
+
+#contact-mail {
+  max-width: 48rem;
+}
+
+#contact-message {
+  height: 4rem;
+}
+
+.contact-note {
+  font-size: 0.625rem;
+  line-height: 0.625rem;
+  margin: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.875rem;
+}
+
+/* :focus */
+#contact-forms input:focus + label, #contact-forms textarea:focus + label {
+  color: #00b6d0;
+}
+#contact-forms input:focus, #contact-forms textarea:focus {
+  border: 0 none;
+  border-bottom: 1px solid #00b6d0;
+}
+
+
+
+
+
+/* /:focus */
+
+
 
 /* global-nav */
   #global-nav {
@@ -237,6 +323,11 @@ a:visited{
 }
 
 /* #biography */
+
+  #biography-list{
+    margin: 0;
+    padding: 0;
+  }
 
   #biography-list dt {
     border-top: 1px solid #000;

@@ -40,17 +40,18 @@ var FormInput = function (_Component) {
       var common = {
         id: this.props.id,
         ref: 'input',
-        defaultValue: this.props.defaultValue
+        defaultValue: this.props.defaultValue,
+        formId: this.props.formId
       };
       switch (this.props.type) {
         case 'name':
-          return _react2.default.createElement('input', _extends({}, common, { type: 'text' }));
+          return _react2.default.createElement('input', _extends({}, common, { id: common.formId, type: 'text' }));
 
         case 'mail':
-          return _react2.default.createElement('input', _extends({}, common, { type: 'text' }));
+          return _react2.default.createElement('input', _extends({}, common, { id: common.formId, type: 'email', autoComplete: 'on' }));
 
-        case 'body':
-          return _react2.default.createElement('textarea', common);
+        case 'message':
+          return _react2.default.createElement('textarea', _extends({}, common, { id: common.formId }));
 
         default:
           return _react2.default.createElement('input', _extends({}, common, { type: 'text' }));

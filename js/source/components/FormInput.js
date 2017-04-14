@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 
 
-type FormInputFieldType = 'name' | 'mail' | 'body';
+type FormInputFieldType = 'name' | 'mail' | 'message';
 
 export type FormInputFieldValue = string;
 
@@ -11,8 +11,10 @@ export type FormInputField = {
   type: FormInputFieldType,
   defaultValue?: FormInputFieldValue,
   id?: string,
+  formId: string,
   options?: Array<string>,
   label?: string,
+  maxLength: number,
 };
 
 class FormInput extends Component {
@@ -34,16 +36,17 @@ class FormInput extends Component {
       id: this.props.id,
       ref: 'input',
       defaultValue: this.props.defaultValue,
+      formId: this.props.formId,
     };
     switch (this.props.type) {
       case 'name':
-        return <input {...common} type="text" />;
+        return <input {...common} id={common.formId} type="text" />;
         
       case 'mail':
-        return <input {...common} type="text" />;
+        return <input {...common} id={common.formId} type="email" autoComplete="on" />;
         
-      case 'body':
-        return <textarea {...common} />;
+      case 'message':
+        return <textarea {...common} id={common.formId} />;
 
       default:
         return <input {...common} type="text" />;
