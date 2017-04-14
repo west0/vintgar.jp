@@ -30,7 +30,8 @@ input, button, textarea, select {
   position: relative;
 }
 
-#contact-forms label, #contact-forms input, contact-forms textarea {
+#contact-forms label, #contact-forms input, #contact-forms textarea {
+  border: none;
   display: block;
 }
 
@@ -80,9 +81,13 @@ input, button, textarea, select {
   border-bottom: 1px solid #00b6d0;
 }
 
-
-
-
-
 /* /:focus */
+
+/* #form-buttons */
+#form-buttons {
+  text-align: right;
+}
+
+
+
 

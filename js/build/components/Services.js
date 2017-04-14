@@ -58,12 +58,12 @@ var Services = function (_Component) {
             null,
             _react2.default.createElement(
               "p",
-              { className: "detail" },
+              { className: "service-detail" },
               "PMBOK\u6E96\u62E0, \u5404\u793E\u30EB\u30FC\u30EB\u6E96\u62E0, \u30DE\u30CD\u30B8\u30E1\u30F3\u30C8\u30D7\u30ED\u30BB\u30B9\u6539\u5584 etc."
             ),
             _react2.default.createElement(
               "p",
-              { id: "service-note" },
+              { className: "service-note" },
               "* [Certification] PMP(PMI), ProjectManager(IPA.Japan)"
             )
           ),
@@ -77,12 +77,12 @@ var Services = function (_Component) {
             null,
             _react2.default.createElement(
               "p",
-              { className: "detail" },
+              { className: "service-detail" },
               "\u9867\u5BA2\u63D0\u6848/\u5BFE\u5FDC, \u8981\u4EF6\u5B9A\u7FA9, \u958B\u767A\u30C7\u30A3\u30EC\u30AF\u30B7\u30E7\u30F3/\u8AB2\u984C\u7BA1\u7406, \u30C6\u30B9\u30C8 etc."
             ),
             _react2.default.createElement(
               "p",
-              { id: "service-note" },
+              { className: "service-note" },
               "* [\u5BFE\u8C61]Web\u30B5\u30A4\u30C8, Smartphone\u30A2\u30D7\u30EA, \u305D\u306E\u4ED6\u30B7\u30B9\u30C6\u30E0"
             )
           ),
@@ -96,7 +96,7 @@ var Services = function (_Component) {
             null,
             _react2.default.createElement(
               "p",
-              { className: "detail" },
+              { className: "service-detail" },
               "\u696D\u52D9\u30D5\u30ED\u30FC\u69CB\u7BC9/\u6539\u5584, \u8CC7\u6599\u4F5C\u6210, \u554F\u984C\u6574\u7406/\u5206\u6790, \u89E3\u6C7A\u7B56\u63D0\u6848/\u5B9F\u884C etc."
             )
           ),
@@ -110,7 +110,7 @@ var Services = function (_Component) {
             null,
             _react2.default.createElement(
               "p",
-              { className: "detail" },
+              { className: "service-detail" },
               "\u6280\u8853\u5B9F\u52D9\u306E\u63D0\u4F9B\u306F\u7D42\u4E86\u3057\u307E\u3057\u305F\u3002"
             )
           )

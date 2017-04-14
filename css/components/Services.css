@@ -28,22 +28,37 @@
   #service-list dd:last-child {
     border-bottom: 1px solid #000;
   }
-  #service-list #service-note {
+
+  .service-detail {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin:0;
+    padding:0;
+  }
+
+  .service-note {
     font-size: 0.625rem;
     line-height: 1rem;
     margin:0;
     padding:0;
   }
   
-  #service-list .detail {
-    font-size: 0.75rem;
-    line-height: 1rem;
-    margin:0;
-    padding:0;
-  }
+
   
   .programming{
     text-decoration: line-through;
   }
 /* /#service */
+
+@media all and (min-width:600px){
+  #service-list dt, #service-list dd:last-child {
+    border: none;
+  }
+  
+  #service-list dd {
+    padding-left: 5%;
+  }
+}
+
+
 

@@ -17,7 +17,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Button = function Button(props) {
-  return props.href ? _react2.default.createElement('a', _extends({}, props, { className: (0, _classnames2.default)('Button', props.className) })) : _react2.default.createElement('button', _extends({}, props, { className: (0, _classnames2.default)('Button', props.className) }));
+  return props.href ? _react2.default.createElement('a', _extends({}, props, { id: props.buttonId, className: (0, _classnames2.default)('Button', props.className) })) : _react2.default.createElement('button', _extends({}, props, { id: props.buttonId, className: (0, _classnames2.default)('Button', props.className) }));
 };
 
 exports.default = Button;

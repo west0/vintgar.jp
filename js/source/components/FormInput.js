@@ -36,17 +36,16 @@ class FormInput extends Component {
       id: this.props.id,
       ref: 'input',
       defaultValue: this.props.defaultValue,
-      formId: this.props.formId,
     };
     switch (this.props.type) {
       case 'name':
-        return <input {...common} id={common.formId} type="text" />;
+        return <input {...common} id={this.props.formId} type="text" />;
         
       case 'mail':
-        return <input {...common} id={common.formId} type="email" autoComplete="on" />;
+        return <input {...common} id={this.props.formId} type="email" autoComplete="on" />;
         
       case 'message':
-        return <textarea {...common} id={common.formId} />;
+        return <textarea {...common} id={this.props.formId} />;
 
       default:
         return <input {...common} type="text" />;

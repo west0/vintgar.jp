@@ -23,21 +23,21 @@ class Services extends Component {
   <dl id="service-list">
     <dt>プロジェクトマネジメント</dt>
     <dd>
-      <p className="detail">PMBOK準拠, 各社ルール準拠, マネジメントプロセス改善 etc.</p>
-      <p id="service-note">* [Certification] PMP(PMI), ProjectManager(IPA.Japan)</p>
+      <p className="service-detail">PMBOK準拠, 各社ルール準拠, マネジメントプロセス改善 etc.</p>
+      <p className="service-note">* [Certification] PMP(PMI), ProjectManager(IPA.Japan)</p>
     </dd>
     <dt>開発ディレクション</dt>
     <dd>
-      <p className="detail">顧客提案/対応, 要件定義, 開発ディレクション/課題管理, テスト etc.</p>
-      <p id="service-note">* [対象]Webサイト, Smartphoneアプリ, その他システム</p>
+      <p className="service-detail">顧客提案/対応, 要件定義, 開発ディレクション/課題管理, テスト etc.</p>
+      <p className="service-note">* [対象]Webサイト, Smartphoneアプリ, その他システム</p>
     </dd>
     <dt>ビジネスコンサルティング</dt>
     <dd>
-      <p className="detail">業務フロー構築/改善, 資料作成, 問題整理/分析, 解決策提案/実行 etc.</p>
+      <p className="service-detail">業務フロー構築/改善, 資料作成, 問題整理/分析, 解決策提案/実行 etc.</p>
     </dd>
     <dt className="programming">エンジニア業務</dt>
     <dd>
-      <p className="detail">技術実務の提供は終了しました。</p>
+      <p className="service-detail">技術実務の提供は終了しました。</p>
     </dd>
   </dl>
 </section>

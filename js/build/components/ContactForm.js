@@ -14,9 +14,9 @@ var _FormInput = require('./FormInput');
 
 var _FormInput2 = _interopRequireDefault(_FormInput);
 
-var _Button = require('./Button');
+var _ActionButton = require('./ActionButton');
 
-var _Button2 = _interopRequireDefault(_Button);
+var _ActionButton2 = _interopRequireDefault(_ActionButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101,11 +101,18 @@ var ContactForm = function (_Component) {
           )
         ),
         _react2.default.createElement(
-          _Button2.default,
-          {
-            onClick: console.log('clicked')
-          },
-          'ok'
+          'div',
+          { id: 'form-buttons' },
+          _react2.default.createElement(_ActionButton2.default, {
+            buttonId: 'button-clear',
+            onClick: console.log('clicked'),
+            label: 'CLEAR'
+          }),
+          _react2.default.createElement(_ActionButton2.default, {
+            buttonId: 'button-submit',
+            onClick: console.log('clicked'),
+            label: 'SEND'
+          })
         ),
         _react2.default.createElement(
           'p',

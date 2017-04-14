@@ -22,14 +22,14 @@
     background-color: rgba(0,0,0,0.15);
   }
   
-  .skill-etc {
-    
-  }
 /* /#skills */
   
+@media all and (min-width:600px){
+  #skill-info {
+    border: none;
+  }
   
-  
-
-
-
-
+  #skill-info {
+    padding: 0;
+  }
+}

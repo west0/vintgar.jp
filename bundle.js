@@ -58,8 +58,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -70,11 +68,15 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Button = function Button(props) {
-  return props.href ? _react2.default.createElement('a', _extends({}, props, { className: (0, _classnames2.default)('Button', props.className) })) : _react2.default.createElement('button', _extends({}, props, { className: (0, _classnames2.default)('Button', props.className) }));
+var ActionButton = function ActionButton(props) {
+  return _react2.default.createElement(
+    'button',
+    { id: props.buttonId, className: (0, _classnames2.default)('Button', props.className) },
+    props.label
+  );
 };
 
-exports.default = Button;
+exports.default = ActionButton;
 },{"classnames":11,"react":208}],3:[function(require,module,exports){
 'use strict';
 
@@ -92,9 +94,9 @@ var _FormInput = require('./FormInput');
 
 var _FormInput2 = _interopRequireDefault(_FormInput);
 
-var _Button = require('./Button');
+var _ActionButton = require('./ActionButton');
 
-var _Button2 = _interopRequireDefault(_Button);
+var _ActionButton2 = _interopRequireDefault(_ActionButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -179,11 +181,18 @@ var ContactForm = function (_Component) {
           )
         ),
         _react2.default.createElement(
-          _Button2.default,
-          {
-            onClick: console.log('clicked')
-          },
-          'ok'
+          'div',
+          { id: 'form-buttons' },
+          _react2.default.createElement(_ActionButton2.default, {
+            buttonId: 'button-clear',
+            onClick: console.log('clicked'),
+            label: 'CLEAR'
+          }),
+          _react2.default.createElement(_ActionButton2.default, {
+            buttonId: 'button-submit',
+            onClick: console.log('clicked'),
+            label: 'SEND'
+          })
         ),
         _react2.default.createElement(
           'p',
@@ -198,7 +207,7 @@ var ContactForm = function (_Component) {
 }(_react.Component);
 
 exports.default = ContactForm;
-},{"./Button":2,"./FormInput":4,"react":208}],4:[function(require,module,exports){
+},{"./ActionButton":2,"./FormInput":4,"react":208}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -241,18 +250,17 @@ var FormInput = function (_Component) {
       var common = {
         id: this.props.id,
         ref: 'input',
-        defaultValue: this.props.defaultValue,
-        formId: this.props.formId
+        defaultValue: this.props.defaultValue
       };
       switch (this.props.type) {
         case 'name':
-          return _react2.default.createElement('input', _extends({}, common, { id: common.formId, type: 'text' }));
+          return _react2.default.createElement('input', _extends({}, common, { id: this.props.formId, type: 'text' }));
 
         case 'mail':
-          return _react2.default.createElement('input', _extends({}, common, { id: common.formId, type: 'email', autoComplete: 'on' }));
+          return _react2.default.createElement('input', _extends({}, common, { id: this.props.formId, type: 'email', autoComplete: 'on' }));
 
         case 'message':
-          return _react2.default.createElement('textarea', _extends({}, common, { id: common.formId }));
+          return _react2.default.createElement('textarea', _extends({}, common, { id: this.props.formId }));
 
         default:
           return _react2.default.createElement('input', _extends({}, common, { type: 'text' }));
@@ -668,12 +676,12 @@ var Services = function (_Component) {
             null,
             _react2.default.createElement(
               "p",
-              { className: "detail" },
+              { className: "service-detail" },
               "PMBOK\u6E96\u62E0, \u5404\u793E\u30EB\u30FC\u30EB\u6E96\u62E0, \u30DE\u30CD\u30B8\u30E1\u30F3\u30C8\u30D7\u30ED\u30BB\u30B9\u6539\u5584 etc."
             ),
             _react2.default.createElement(
               "p",
-              { id: "service-note" },
+              { className: "service-note" },
               "* [Certification] PMP(PMI), ProjectManager(IPA.Japan)"
             )
           ),
@@ -687,12 +695,12 @@ var Services = function (_Component) {
             null,
             _react2.default.createElement(
               "p",
-              { className: "detail" },
+              { className: "service-detail" },
               "\u9867\u5BA2\u63D0\u6848/\u5BFE\u5FDC, \u8981\u4EF6\u5B9A\u7FA9, \u958B\u767A\u30C7\u30A3\u30EC\u30AF\u30B7\u30E7\u30F3/\u8AB2\u984C\u7BA1\u7406, \u30C6\u30B9\u30C8 etc."
             ),
             _react2.default.createElement(
               "p",
-              { id: "service-note" },
+              { className: "service-note" },
               "* [\u5BFE\u8C61]Web\u30B5\u30A4\u30C8, Smartphone\u30A2\u30D7\u30EA, \u305D\u306E\u4ED6\u30B7\u30B9\u30C6\u30E0"
             )
           ),
@@ -706,7 +714,7 @@ var Services = function (_Component) {
             null,
             _react2.default.createElement(
               "p",
-              { className: "detail" },
+              { className: "service-detail" },
               "\u696D\u52D9\u30D5\u30ED\u30FC\u69CB\u7BC9/\u6539\u5584, \u8CC7\u6599\u4F5C\u6210, \u554F\u984C\u6574\u7406/\u5206\u6790, \u89E3\u6C7A\u7B56\u63D0\u6848/\u5B9F\u884C etc."
             )
           ),
@@ -720,7 +728,7 @@ var Services = function (_Component) {
             null,
             _react2.default.createElement(
               "p",
-              { className: "detail" },
+              { className: "service-detail" },
               "\u6280\u8853\u5B9F\u52D9\u306E\u63D0\u4F9B\u306F\u7D42\u4E86\u3057\u307E\u3057\u305F\u3002"
             )
           )

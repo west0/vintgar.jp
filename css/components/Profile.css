@@ -28,3 +28,14 @@
     padding-left: 1rem;
   }
 /* /#biography */
+
+@media all and (min-width:600px) {
+  #biography-list dt, #biography-list dd:last-child {
+    border: none;
+  }
+  
+  #biography-list dt:first-child {
+    padding: 0;
+  } 
+}
+

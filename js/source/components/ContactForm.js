@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 import FormInput from './FormInput';
-import Button from './Button';
+import ActionButton from './ActionButton';
 
 type Props = {
   hoge: Array<Object>,
@@ -35,9 +35,18 @@ class ContactForm extends Component {
             <p className="contact-note">128文字</p>
           </li>
         </ul>
-        <Button 
-          onClick={console.log('clicked')}
-        >ok</Button>
+        <div id="form-buttons">
+          <ActionButton 
+            buttonId="button-clear"
+            onClick={console.log('clicked')}
+            label="CLEAR"
+        />
+        <ActionButton 
+            buttonId="button-submit"
+            onClick={console.log('clicked')}
+            label="SEND"
+        />
+        </div>
         <p>If you will not get any replies in two days, send messages again.</p>
       </form>
     );
