@@ -18,6 +18,10 @@ var _ActionButton = require('./ActionButton');
 
 var _ActionButton2 = _interopRequireDefault(_ActionButton);
 
+var _Dialog = require('./Dialog');
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36,6 +40,15 @@ var ContactForm = function (_Component) {
   }
 
   _createClass(ContactForm, [{
+    key: '_renderDialog',
+    value: function _renderDialog() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        'aaa'
+      );
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -105,11 +118,13 @@ var ContactForm = function (_Component) {
           { id: 'form-buttons' },
           _react2.default.createElement(_ActionButton2.default, {
             buttonId: 'button-clear',
+            buttonType: 'sub',
             onClick: console.log('clicked'),
             label: 'CLEAR'
           }),
           _react2.default.createElement(_ActionButton2.default, {
             buttonId: 'button-submit',
+            buttonType: 'main',
             onClick: console.log('clicked'),
             label: 'SEND'
           })

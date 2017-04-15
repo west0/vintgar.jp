@@ -1,5 +1,5 @@
 
-#button-clear, #button-submit {
+.button-main, .button-sub {
   border: 1px solid #53606a;
   border-radius: 2px;
   cursor: pointer;
@@ -12,12 +12,12 @@
   min-width: 5rem;
 }
 
-#button-submit {
+.button-main {
   background-color: #53606a;
   color: #fff;
 }
 
-#button-submit:hover, #button-submit:active, #button-clear:hover, #button-clear:active  {
+.button-main:hover, .button-main:active, .button-sub:hover, .button-sub:active  {
   background-color: #92999f;
   color: #53606a;
 }

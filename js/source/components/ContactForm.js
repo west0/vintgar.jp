@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import FormInput from './FormInput';
 import ActionButton from './ActionButton';
+import Dialog from './Dialog';
 
 type Props = {
   hoge: Array<Object>,
@@ -13,6 +14,14 @@ class ContactForm extends Component {
   constructor(props: Props) {
     super(props);
   }
+  
+  _renderDialog() {
+    return (
+      <div>aaa</div>
+    );
+  }
+  
+  
   render() {
     return (
       <form id="contact-form" name="contact-form" className="page-component">
@@ -38,11 +47,13 @@ class ContactForm extends Component {
         <div id="form-buttons">
           <ActionButton 
             buttonId="button-clear"
+            buttonType="sub"
             onClick={console.log('clicked')}
             label="CLEAR"
         />
         <ActionButton 
             buttonId="button-submit"
+            buttonType="main"
             onClick={console.log('clicked')}
             label="SEND"
         />

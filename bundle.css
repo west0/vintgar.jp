@@ -48,7 +48,7 @@ a:visited{
 }
 
 
-.page-title{
+.page-title {
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.5rem;
@@ -125,7 +125,7 @@ a:visited{
 }
 
 
-#button-clear, #button-submit {
+.button-main, .button-sub {
   border: 1px solid #53606a;
   border-radius: 2px;
   cursor: pointer;
@@ -138,12 +138,12 @@ a:visited{
   min-width: 5rem;
 }
 
-#button-submit {
+.button-main {
   background-color: #53606a;
   color: #fff;
 }
 
-#button-submit:hover, #button-submit:active, #button-clear:hover, #button-clear:active  {
+.button-main:hover, .button-main:active, .button-sub:hover, .button-sub:active  {
   background-color: #92999f;
   color: #53606a;
 }
@@ -243,6 +243,19 @@ input, button, textarea, select {
 
 
 
+.dialog-modal-open {
+  overflow: hidden;
+}
+
+.dialog-modal {
+  background: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
 
 
 /* global-nav */
