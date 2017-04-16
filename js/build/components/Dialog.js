@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Button = require('./Button');
+var _ActionButton = require('./ActionButton');
 
-var _Button2 = _interopRequireDefault(_Button);
+var _ActionButton2 = _interopRequireDefault(_ActionButton);
 
 var _react = require('react');
 
@@ -48,37 +48,23 @@ var Dialog = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: this.props.modal ? 'Dialog DialogModal' : 'Dialog' },
-        _react2.default.createElement(
-          'div',
-          { className: this.props.modal ? 'DialogModalWrap' : null },
-          _react2.default.createElement(
-            'div',
-            { className: 'DialogHeader' },
-            this.props.header
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'DialogBody' },
-            this.props.children
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'DialogFooter' },
-            this.props.hasCancel ? _react2.default.createElement(
-              'span',
-              {
-                className: 'DialogDismiss',
-                onClick: this.props.onAction.bind(this, 'dismiss') },
-              'Cancel'
-            ) : null,
-            _react2.default.createElement(
-              _Button2.default,
-              { onClick: this.props.onAction.bind(this, this.props.hasCancel ? 'confirm' : 'dismiss') },
-              this.props.confirmLabel
-            )
-          )
-        )
+        { id: this.proprs.contactId },
+        _react2.default.createElement(_ActionButton2.default, {
+          buttonId: 'button-clear',
+          buttonType: 'sub',
+          onAction: function onAction(_) {
+            console.log('click_cancel');
+          },
+          label: 'CANCEL'
+        }),
+        _react2.default.createElement(_ActionButton2.default, {
+          buttonId: 'button-clear',
+          buttonType: 'main',
+          onAction: function onAction(_) {
+            console.log('click_send');
+          },
+          label: 'SEND'
+        })
       );
     }
   }]);
@@ -87,9 +73,9 @@ var Dialog = function (_Component) {
 }(_react.Component);
 
 Dialog.defaultProps = {
-  confirmLabel: 'ok',
-  modal: false,
-  onAction: function onAction(_) {},
-  hasCancel: true
+  dialogId: 'contact-confirm-dialog',
+  contactName: 'no-name',
+  contactMail: 'no-mail',
+  contactMessage: 'no-message'
 };
 exports.default = Dialog;

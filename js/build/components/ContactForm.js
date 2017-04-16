@@ -42,11 +42,19 @@ var ContactForm = function (_Component) {
   _createClass(ContactForm, [{
     key: '_renderDialog',
     value: function _renderDialog() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        'aaa'
-      );
+      console.log('_renderDialog()');
+      return _react2.default.createElement(_Dialog2.default, {
+        contactId: 'contact-confirm-dialog',
+        contactName: null,
+        contactMail: null,
+        contactMessage: null
+      });
+    }
+  }, {
+    key: '_clearForm',
+    value: function _clearForm() {
+      console.log('_clearForm()');
+      return null;
     }
   }, {
     key: 'render',
@@ -119,13 +127,13 @@ var ContactForm = function (_Component) {
           _react2.default.createElement(_ActionButton2.default, {
             buttonId: 'button-clear',
             buttonType: 'sub',
-            onClick: console.log('clicked'),
+            onAction: this._clearForm.bind(this),
             label: 'CLEAR'
           }),
           _react2.default.createElement(_ActionButton2.default, {
             buttonId: 'button-submit',
             buttonType: 'main',
-            onClick: console.log('clicked'),
+            onAction: this._renderDialog.bind(this),
             label: 'SEND'
           })
         ),

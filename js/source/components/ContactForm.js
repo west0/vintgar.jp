@@ -16,9 +16,20 @@ class ContactForm extends Component {
   }
   
   _renderDialog() {
+    console.log('_renderDialog()');
     return (
-      <div>aaa</div>
+      <Dialog
+        contactId="contact-confirm-dialog"
+        contactName={null}
+        contactMail={null}
+        contactMessage={null}
+      />
     );
+  }
+  
+  _clearForm() {
+    console.log('_clearForm()');
+    return (null);
   }
   
   
@@ -48,13 +59,13 @@ class ContactForm extends Component {
           <ActionButton 
             buttonId="button-clear"
             buttonType="sub"
-            onClick={console.log('clicked')}
+            onAction={this._clearForm.bind(this)}
             label="CLEAR"
         />
         <ActionButton 
             buttonId="button-submit"
             buttonType="main"
-            onClick={console.log('clicked')}
+            onAction={this._renderDialog.bind(this)}
             label="SEND"
         />
         </div>

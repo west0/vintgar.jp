@@ -14,7 +14,11 @@ var ActionButton = function ActionButton(props) {
   var buttonTypeClass = props.buttonType === 'main' ? 'button-main' : 'button-sub';
   return _react2.default.createElement(
     'button',
-    { id: props.buttonId, className: buttonTypeClass },
+    {
+      id: props.buttonId,
+      className: buttonTypeClass,
+      type: 'button'
+    },
     props.label
   );
 };

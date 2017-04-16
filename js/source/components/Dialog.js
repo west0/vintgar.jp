@@ -1,15 +1,13 @@
 /* @flow */
 
-import Button from './Button';
+import ActionButton from './ActionButton';
 import React, {Component} from 'react';
 
 type Props = {
-  header: string,
-  confirmLabel: string,
-  modal: boolean,
-  onAction: Function,
-  hasCancel: ?boolean,
-  children?: Array<any>,
+  dialogId: ?string,
+  contactName: ?string,
+  contactMail: ?string,
+  contactMessage: ?string,
 };
 
 class Dialog extends Component {
@@ -17,10 +15,10 @@ class Dialog extends Component {
   props: Props;
   
   static defaultProps = {
-    confirmLabel: 'ok',
-    modal: false,
-    onAction: (_) => {},
-    hasCancel: true,
+    dialogId: 'contact-confirm-dialog',
+    contactName: 'no-name',
+    contactMail: 'no-mail',
+    contactMessage: 'no-message',
   };
   
   componentWillUnmount() {
@@ -35,7 +33,24 @@ class Dialog extends Component {
   
   render() {
     return (
-      <div className={this.props.modal ? 'Dialog DialogModal' : 'Dialog'}>
+      <div id={this.proprs.contactId}>
+        <ActionButton
+          buttonId="button-clear"
+          buttonType="sub"
+          onAction={(_) => {
+            console.log('click_cancel')
+          }}
+          label="CANCEL"
+        />
+        <ActionButton
+          buttonId="button-clear"
+          buttonType="main"
+          onAction={(_) => {
+            console.log('click_send')
+          }}
+          label="SEND"
+        />
+      {/*
         <div className={this.props.modal ? 'DialogModalWrap' : null}>
           <div className="DialogHeader">{this.props.header}</div>
           <div className="DialogBody">{this.props.children}</div>
@@ -54,6 +69,7 @@ class Dialog extends Component {
             </Button>
           </div>
         </div>
+        */}
       </div>
     );
   }
