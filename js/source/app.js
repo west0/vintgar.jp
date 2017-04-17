@@ -18,14 +18,16 @@ let store = createStore(vintgarApp);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Home />
-    <div id="main-contents" className="root-component">
-      <Profile />
-      <Services />
-      <Skills />
-      <ContactForm />
+    <div>
+      <Home />
+      <div id="main-contents" className="root-component">
+        <Profile />
+        <Services />
+        <Skills />
+        <ContactForm />
+      </div>
+      <GlobalNav />
     </div>
-    <GlobalNav />
   </Provider>,
   document.getElementById('app')
 );

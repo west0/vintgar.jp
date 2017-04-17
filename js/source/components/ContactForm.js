@@ -1,8 +1,7 @@
 /* @flow */
 
 import React, {Component} from 'react';
-//import { confirmContact, clearForm } from '../action';
-import FormInput from './FormInput';
+import ReactDOM from 'react-dom';
 import Dialog from './Dialog';
 
 type Props = {
@@ -42,17 +41,17 @@ class ContactForm extends Component {
         <p id="form-legends">*&nbsp;必須項目</p>
         <ul id="contact-forms">
           <li>
-            <FormInput formId="contact-name" type="name" max-length="24" label="name" />
+            <input id="contact-name" ref="contactName" maxLength="24" type="text" />
             <label htmlFor="contact-name">name&nbsp;*</label>
             <p className="contact-note">24文字</p>
           </li>
           <li>
-            <FormInput formId="contact-mail" type="mail" max-lenght="48" label="e-mail" />
+            <input id="contact-mail" ref="contactMail" maxLength="48" type="email" />
             <label htmlFor="contact-mail">e-mail&nbsp;*</label>
             <p className="contact-note">半角48文字</p>
           </li>
           <li>
-            <FormInput formId="contact-message" type="message" max-length="256" label="" />
+            <textarea id="contact-message" ref="contactMessage" maxLength="256" />
             <label htmlFor="contact-message">message&nbsp;*</label>
             <p className="contact-note">128文字</p>
           </li>
@@ -63,7 +62,8 @@ class ContactForm extends Component {
             className="button-sub"
             type="button"
             onClick={e => {
-              console.log('click-send-button');
+              e.preventDefault();
+              console.log(ReactDOM.findDOMNode(this.refs.contactName).value);
             }}
           >CLEAR</button>
           <button
@@ -71,8 +71,8 @@ class ContactForm extends Component {
             className="button-main"
             type="button"
             onClick={e => {
-              alert('click-send-button');
-              console.log('click-send-button');
+              e.preventDefault();
+              console.log(ReactDOM.findDOMNode(this.refs.contactMail).value);
             }}
           >SEND</button>
         </div>

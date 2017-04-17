@@ -10,9 +10,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _FormInput = require('./FormInput');
+var _reactDom = require('react-dom');
 
-var _FormInput2 = _interopRequireDefault(_FormInput);
+var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _Dialog = require('./Dialog');
 
@@ -25,8 +25,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-//import { confirmContact, clearForm } from '../action';
-
 
 var ContactForm = function (_Component) {
   _inherits(ContactForm, _Component);
@@ -57,6 +55,8 @@ var ContactForm = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'form',
         { id: 'contact-form', name: 'contact-form', className: 'page-component', onSubmit: function onSubmit(e) {
@@ -78,7 +78,7 @@ var ContactForm = function (_Component) {
           _react2.default.createElement(
             'li',
             null,
-            _react2.default.createElement(_FormInput2.default, { formId: 'contact-name', type: 'name', 'max-length': '24', label: 'name' }),
+            _react2.default.createElement('input', { id: 'contact-name', ref: 'contactName', maxLength: '24', type: 'text' }),
             _react2.default.createElement(
               'label',
               { htmlFor: 'contact-name' },
@@ -93,7 +93,7 @@ var ContactForm = function (_Component) {
           _react2.default.createElement(
             'li',
             null,
-            _react2.default.createElement(_FormInput2.default, { formId: 'contact-mail', type: 'mail', 'max-lenght': '48', label: 'e-mail' }),
+            _react2.default.createElement('input', { id: 'contact-mail', ref: 'contactMail', maxLength: '48', type: 'email' }),
             _react2.default.createElement(
               'label',
               { htmlFor: 'contact-mail' },
@@ -108,7 +108,7 @@ var ContactForm = function (_Component) {
           _react2.default.createElement(
             'li',
             null,
-            _react2.default.createElement(_FormInput2.default, { formId: 'contact-message', type: 'message', 'max-length': '256', label: '' }),
+            _react2.default.createElement('textarea', { id: 'contact-message', ref: 'contactMessage', maxLength: '256' }),
             _react2.default.createElement(
               'label',
               { htmlFor: 'contact-message' },
@@ -131,7 +131,8 @@ var ContactForm = function (_Component) {
               className: 'button-sub',
               type: 'button',
               onClick: function onClick(e) {
-                console.log('click-send-button');
+                e.preventDefault();
+                console.log(_reactDom2.default.findDOMNode(_this2.refs.contactName).value);
               }
             },
             'CLEAR'
@@ -143,8 +144,8 @@ var ContactForm = function (_Component) {
               className: 'button-main',
               type: 'button',
               onClick: function onClick(e) {
-                alert('click-send-button');
-                console.log('click-send-button');
+                e.preventDefault();
+                console.log(_reactDom2.default.findDOMNode(_this2.refs.contactMail).value);
               }
             },
             'SEND'

@@ -45,16 +45,20 @@ var store = (0, _redux.createStore)(_reducers.vintgarApp);
 _reactDom2.default.render(_react2.default.createElement(
   _reactRedux.Provider,
   { store: store },
-  _react2.default.createElement(_Home2.default, null),
   _react2.default.createElement(
     'div',
-    { id: 'main-contents', className: 'root-component' },
-    _react2.default.createElement(_Profile2.default, null),
-    _react2.default.createElement(_Services2.default, null),
-    _react2.default.createElement(_Skills2.default, null),
-    _react2.default.createElement(_ContactForm2.default, null)
-  ),
-  _react2.default.createElement(_GlobalNav2.default, null)
+    null,
+    _react2.default.createElement(_Home2.default, null),
+    _react2.default.createElement(
+      'div',
+      { id: 'main-contents', className: 'root-component' },
+      _react2.default.createElement(_Profile2.default, null),
+      _react2.default.createElement(_Services2.default, null),
+      _react2.default.createElement(_Skills2.default, null),
+      _react2.default.createElement(_ContactForm2.default, null)
+    ),
+    _react2.default.createElement(_GlobalNav2.default, null)
+  )
 ), document.getElementById('app'));
 
 /* */
