@@ -3,32 +3,38 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var confirmContact = exports.confirmContact = function confirmContact(name, mailAddr, message) {
+var actionId = 1;
+
+var confirmContact = exports.confirmContact = function confirmContact(contactName, contactMailAddr, contactMessage) {
   return {
     type: 'CONFIRM',
-    name: name,
-    mailAddr: mailAddr,
-    message: message
+    id: actionId++,
+    contactName: contactName,
+    contactMailAddr: contactMailAddr,
+    contactMessage: contactMessage
   };
 };
 
 var clearForm = exports.clearForm = function clearForm() {
   return {
-    type: 'CLEAR'
+    type: 'CLEAR',
+    id: actionId++
   };
 };
 
 var cancelDialog = exports.cancelDialog = function cancelDialog() {
   return {
-    type: 'CANCEL'
+    type: 'CANCEL',
+    id: actionId++
   };
 };
 
-var sendMail = exports.sendMail = function sendMail(name, mailAddr, message) {
+var sendMail = exports.sendMail = function sendMail(contactName, contactMailAddr, contactMessage) {
   return {
-    type: 'CONFIRM',
-    name: name,
-    mailAddr: mailAddr,
-    message: message
+    type: 'ERROR',
+    id: actionId++,
+    contactName: contactName,
+    contactMailAddr: contactMailAddr,
+    contactMessage: contactMessage
   };
 };

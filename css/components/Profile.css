@@ -6,7 +6,7 @@
   }
 
   #biography-list dt {
-    border-top: 1px solid #000;
+    border-top: 1px solid #53606a;
     font-size: 0.875rem;
     margin:0;
     padding: 1rem 0 0 0;
@@ -19,7 +19,7 @@
   }
 
   #biography-list dd:last-child {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #53606a;
   }
   
   .biography-note {

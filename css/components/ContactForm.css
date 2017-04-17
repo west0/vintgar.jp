@@ -10,7 +10,7 @@ input, button, textarea, select {
 	appearance: none;
 }
 
-#contact-forms {
+#input-forms {
   list-style: none none outside;
   padding: 0;
   margin: 0;
@@ -24,18 +24,18 @@ input, button, textarea, select {
   text-align: right;
 }
 
-#contact-forms li{
+#input-forms li{
   margin: 0;
   padding: 0 0 2rem 0;
   position: relative;
 }
 
-#contact-forms label, #contact-forms input, #contact-forms textarea {
+#input-forms label, #input-forms input, #input-forms textarea {
   border: none;
   display: block;
 }
 
-#contact-forms label {
+#input-forms label {
   font-size: 0.75rem;
   line-height: 0.75rem;
   margin: 0;
@@ -44,13 +44,38 @@ input, button, textarea, select {
   top: -1rem;
 }
 
-#contact-forms input, #contact-forms textarea {
+#input-forms input, #input-forms textarea {
   background-color: rgba(0,0,0,0.05);
   border-bottom: 1px solid #000;
   font-size: 1rem;
   padding:0.5rem 0 0.5rem 0; 
   width: 100%;
 }
+
+#contact-notes {
+  padding-bottom: 2rem;
+}
+
+#contact-notes-title {
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 0.75rem;
+  margin: 0;
+  padding: 0 0 0.25rem 0;
+}
+
+#contact-note {
+  list-style: none none outside;
+  margin: 0;
+  padding: 0;
+}
+
+#contact-note li {
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 0 0 0.25rem 0;
+}
+
 
 #contact-name {
   max-width: 24rem;
@@ -64,7 +89,7 @@ input, button, textarea, select {
   height: 4rem;
 }
 
-.contact-note {
+.input-note {
   font-size: 0.625rem;
   line-height: 0.625rem;
   margin: 0;
@@ -73,12 +98,12 @@ input, button, textarea, select {
 }
 
 /* :focus */
-#contact-forms input:focus + label, #contact-forms textarea:focus + label {
+#input-forms input:focus + label, #input-forms textarea:focus + label {
   color: #00b6d0;
 }
-#contact-forms input:focus, #contact-forms textarea:focus {
+#input-forms input:focus, #input-forms textarea:focus {
   border: 0 none;
-  border-bottom: 1px solid #00b6d0;
+  border-bottom: 1px solid #53606a;
 }
 
 /* /:focus */

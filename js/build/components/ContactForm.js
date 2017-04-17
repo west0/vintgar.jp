@@ -10,13 +10,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
+var _FormButtons = require('../containers/FormButtons');
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _Dialog = require('./Dialog');
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
+var _FormButtons2 = _interopRequireDefault(_FormButtons);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29,34 +25,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var ContactForm = function (_Component) {
   _inherits(ContactForm, _Component);
 
-  function ContactForm(props) {
+  function ContactForm() {
     _classCallCheck(this, ContactForm);
 
-    return _possibleConstructorReturn(this, (ContactForm.__proto__ || Object.getPrototypeOf(ContactForm)).call(this, props));
+    return _possibleConstructorReturn(this, (ContactForm.__proto__ || Object.getPrototypeOf(ContactForm)).apply(this, arguments));
   }
 
   _createClass(ContactForm, [{
-    key: '_renderDialog',
-    value: function _renderDialog() {
-      console.log('_renderDialog()');
-      return _react2.default.createElement(_Dialog2.default, {
-        contactId: 'contact-confirm-dialog',
-        contactName: null,
-        contactMail: null,
-        contactMessage: null
-      });
-    }
-  }, {
-    key: '_clearForm',
-    value: function _clearForm() {
-      console.log('_clearForm()');
-      return null;
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       return _react2.default.createElement(
         'form',
         { id: 'contact-form', name: 'contact-form', className: 'page-component', onSubmit: function onSubmit(e) {
@@ -121,36 +98,7 @@ var ContactForm = function (_Component) {
             )
           )
         ),
-        _react2.default.createElement(
-          'div',
-          { id: 'form-buttons' },
-          _react2.default.createElement(
-            'button',
-            {
-              id: 'button-clear',
-              className: 'button-sub',
-              type: 'button',
-              onClick: function onClick(e) {
-                e.preventDefault();
-                console.log(_reactDom2.default.findDOMNode(_this2.refs.contactName).value);
-              }
-            },
-            'CLEAR'
-          ),
-          _react2.default.createElement(
-            'button',
-            {
-              id: 'button-submit',
-              className: 'button-main',
-              type: 'button',
-              onClick: function onClick(e) {
-                e.preventDefault();
-                console.log(_reactDom2.default.findDOMNode(_this2.refs.contactMail).value);
-              }
-            },
-            'SEND'
-          )
-        ),
+        _react2.default.createElement(_FormButtons2.default, null),
         _react2.default.createElement(
           'p',
           null,

@@ -11,7 +11,7 @@
   }
 
   #service-list dt {
-    border-top: 1px solid #000;
+    border-top: 1px solid #53606a;
     font-size: 0.875rem;
     font-weight: bold;
     line-height: 0.875rem;
@@ -26,7 +26,7 @@
   }
 
   #service-list dd:last-child {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #53606a;
   }
 
   .service-detail {

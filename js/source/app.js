@@ -11,10 +11,10 @@ import Home from './components/Home';
 import Profile from './components/Profile';
 import Services from './components/Services';
 import Skills from './components/Skills';
-import ContactForm from './components/ContactForm';
-import { vintgarApp } from './reducers';
+import ContactForm from './containers/ContactForm';
+import { reducers } from './reducers';
 
-let store = createStore(vintgarApp);
+let store = createStore(reducers);
 
 ReactDOM.render(
   <Provider store={store}>

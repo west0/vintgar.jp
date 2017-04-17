@@ -1,0 +1,87 @@
+.dialog-modal-open {
+  overflow: hidden;
+}
+
+.dialog-container {
+  background: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.dialog-modal {
+  background-color: #f0f0f0;
+  border-radius: 2px;
+  display: block;
+  margin: 3rem auto;
+  width: 80%;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+.dialog-header {
+  padding-bottom: 1rem;
+  text-align: right;
+}
+.close-button {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1rem;
+  width: 2rem;
+}
+
+.close-button:hover {
+  cursor: pointer;
+  color: #999;
+}
+
+.dialog-description {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: 0 0 1rem 0;
+}
+
+.dialog-error-message {
+  color: #f00;
+}
+
+.dialog-contents {
+  margin: 0;
+  padding: 0 0 2rem 0;
+}
+
+.dialog-contents dt {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  margin: 0;
+  padding: 0 0 0.25rem 0;
+}
+
+.dialog-contents dd {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: 0 0 1rem 1rem;
+}
+
+.dialog-message {
+  height: 6rem;
+  overflow-y: scroll;
+}
+
+.dialog-message p {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.dialog-buttons {
+  text-align: right;
+}
+
+
