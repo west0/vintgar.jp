@@ -1,8 +1,8 @@
 /* @flow */
 
 import React, {Component} from 'react';
+//import { confirmContact, clearForm } from '../action';
 import FormInput from './FormInput';
-import ActionButton from './ActionButton';
 import Dialog from './Dialog';
 
 type Props = {
@@ -35,7 +35,9 @@ class ContactForm extends Component {
   
   render() {
     return (
-      <form id="contact-form" name="contact-form" className="page-component">
+      <form id="contact-form" name="contact-form" className="page-component" onSubmit={e => {
+        e.preventDefault();
+      }}>
         <h3 className="page-title">Contact Form</h3>
         <p id="form-legends">*&nbsp;必須項目</p>
         <ul id="contact-forms">
@@ -56,18 +58,23 @@ class ContactForm extends Component {
           </li>
         </ul>
         <div id="form-buttons">
-          <ActionButton 
-            buttonId="button-clear"
-            buttonType="sub"
-            onAction={this._clearForm.bind(this)}
-            label="CLEAR"
-        />
-        <ActionButton 
-            buttonId="button-submit"
-            buttonType="main"
-            onAction={this._renderDialog.bind(this)}
-            label="SEND"
-        />
+          <button
+            id="button-clear"
+            className="button-sub"
+            type="button"
+            onClick={e => {
+              console.log('click-send-button');
+            }}
+          >CLEAR</button>
+          <button
+            id="button-submit"
+            className="button-main"
+            type="button"
+            onClick={e => {
+              alert('click-send-button');
+              console.log('click-send-button');
+            }}
+          >SEND</button>
         </div>
         <p>If you will not get any replies in two days, send messages again.</p>
       </form>

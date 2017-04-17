@@ -14,10 +14,6 @@ var _FormInput = require('./FormInput');
 
 var _FormInput2 = _interopRequireDefault(_FormInput);
 
-var _ActionButton = require('./ActionButton');
-
-var _ActionButton2 = _interopRequireDefault(_ActionButton);
-
 var _Dialog = require('./Dialog');
 
 var _Dialog2 = _interopRequireDefault(_Dialog);
@@ -29,6 +25,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+//import { confirmContact, clearForm } from '../action';
+
 
 var ContactForm = function (_Component) {
   _inherits(ContactForm, _Component);
@@ -61,7 +59,9 @@ var ContactForm = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'form',
-        { id: 'contact-form', name: 'contact-form', className: 'page-component' },
+        { id: 'contact-form', name: 'contact-form', className: 'page-component', onSubmit: function onSubmit(e) {
+            e.preventDefault();
+          } },
         _react2.default.createElement(
           'h3',
           { className: 'page-title' },
@@ -124,18 +124,31 @@ var ContactForm = function (_Component) {
         _react2.default.createElement(
           'div',
           { id: 'form-buttons' },
-          _react2.default.createElement(_ActionButton2.default, {
-            buttonId: 'button-clear',
-            buttonType: 'sub',
-            onAction: this._clearForm.bind(this),
-            label: 'CLEAR'
-          }),
-          _react2.default.createElement(_ActionButton2.default, {
-            buttonId: 'button-submit',
-            buttonType: 'main',
-            onAction: this._renderDialog.bind(this),
-            label: 'SEND'
-          })
+          _react2.default.createElement(
+            'button',
+            {
+              id: 'button-clear',
+              className: 'button-sub',
+              type: 'button',
+              onClick: function onClick(e) {
+                console.log('click-send-button');
+              }
+            },
+            'CLEAR'
+          ),
+          _react2.default.createElement(
+            'button',
+            {
+              id: 'button-submit',
+              className: 'button-main',
+              type: 'button',
+              onClick: function onClick(e) {
+                alert('click-send-button');
+                console.log('click-send-button');
+              }
+            },
+            'SEND'
+          )
         ),
         _react2.default.createElement(
           'p',
