@@ -7,3 +7,4 @@ node_modules
 babel
 __deployme
 __backups
+lib

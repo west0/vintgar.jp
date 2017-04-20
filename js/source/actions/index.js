@@ -1,9 +1,8 @@
 let actionId = 1;
 
-export const confirmContact = (contactName, contactMailAddr, contactMessage) => ({
+export const confirmContact = (contactMailAddr, contactMessage) => ({
   type: 'CONFIRM',
   id: actionId++,
-  contactName: contactName,
   contactMailAddr: contactMailAddr,
   contactMessage: contactMessage,
 });
@@ -18,11 +17,32 @@ export const cancelDialog = () => ({
   id: actionId++,
 });
 
-export const sendMail = (contactName, contactMailAddr, contactMessage) => ({
-  type: 'ERROR',
+export const sendMail = (contactMailAddr, contactMessage) => ({
+  type: 'SEND',
   id: actionId++,
-  contactName: contactName,
   contactMailAddr: contactMailAddr,
   contactMessage: contactMessage,
 });
+
+export const dispError = (contactMailAddr, contactMessage) => ({
+  type: 'ERROR',
+  id: actionId++,
+  contactMailAddr: contactMailAddr,
+  contactMessage: contactMessage,
+})
+
+export const completeInquiry = (contactMailAddr, contactMessage) => ({
+  type: 'COMPLETE',
+  id: actionId++,
+  contactMailAddr: contactMailAddr,
+  contactMessage: contactMessage,
+})
+
+export const finishInquiry = () => ({
+  type: 'none',
+  id: actionId++,
+  contactMailAddr: null,
+  contactMessage: null,
+})
+
 

@@ -1,25 +1,20 @@
 /* @flow */
 
+import 'nodemailer';
 import React, { Component } from 'react';
-//import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { confirmContact, clearForm } from '../actions';
 import ConfirmDialog from '../containers/ConfirmDialog';
 
-
 class ContactForm extends Component {
   _onClear(e) {
-//    console.log(this.refs.contactName.value ? this.refs.contactName.value : 'onClear()');
-    this.refs.contactName.value = '';
     this.refs.contactMailAddr.value = '';
     this.refs.contactMessage.value = '';
     this.props.dispatch(clearForm());
   }
   
   _onConfirm(e) {
-//    console.log('onConfirm()');
     this.props.dispatch(confirmContact(
-      '(名前は表示されません)',
       this.refs.contactMailAddr.value,
       this.refs.contactMessage.value
     ));
@@ -29,6 +24,8 @@ class ContactForm extends Component {
 //    console.log('state: ' + this.props.state.contacts.contactState);
     switch (this.props.state.contacts.contactState) {
       case 'confirm':
+      case 'sending':
+      case 'complete':
       case 'error':
 //        console.log('_renderDialog.CONFIRM');
         return (
@@ -58,13 +55,6 @@ class ContactForm extends Component {
           </div>
           <p id="form-legends">*&nbsp;必須項目</p>
           <ul id="input-forms">
-            {/*
-              <li>
-              <input id="contact-name" ref="contactName" maxLength="24" type="text" />
-              <label htmlFor="contact-name">name&nbsp;*</label>
-              <p className="input-note">24文字</p>
-            </li>
-            */}
             <li>
               <input id="contact-mail" ref="contactMailAddr" maxLength="48" type="email" />
               <label htmlFor="contact-mail">e-mail&nbsp;*</label>

@@ -3,52 +3,52 @@ let initialState = [
   {
     id: 0,
     contactState: 'none',
-    contactName: 'initialName',
     contactMailAddr: null,
     contactMessage: null,
+    isSendError: false,
   },
 ];
 
 let contacts = (state = initialState, action) => {
-//  console.log('reducers.contacts_before_switch.action: ' + action.type + ', ' + action.id + ', ' + action.contactName);  
+//  console.log('reducers.contacts_before_switch.action: ' + action.type + ', ' + action.id);  
 
   switch (action.type) {
     case 'CONFIRM':
-//      console.log('reducers.contacts.confirm.action: ' + action.type + ', ' + action.id + ', ' + action.contactName);
+//      console.log('reducers.contacts.confirm.action: ' + action.type + ', ' + action.id);
       return {
         id: action.id,
         contactState: 'confirm',
-        contactName: action.contactName,
         contactMailAddr: action.contactMailAddr,
         contactMessage: action.contactMessage,
+        isSendError: false,
       }
       
     case 'CLEAR':
-//      console.log('reducers.contacts.clear.action: ' + action.type + ', ' + action.id + ', ' + action.contactName);
+//      console.log('reducers.contacts.clear.action: ' + action.type + ', ' + action.id + ', ' + action.contactMailAddr);
       return {
         id: action.id,
         contactState: 'none',
-        contactName: null,
         contactMailAddr: null,
         contactMessage: null,
+        isSendError: false,
       }
 
     case 'CANCEL':
       return {
         id: action.id,
         contactState: 'none',
-        contactName: null,
-        contactMailAddr: null,
-        contactMessage: null,
+        contactMailAddr: action.contactMailAddr,
+        contactMessage: action.contactMessage,
+        isSendError: false,
       };
 
     case 'SEND':
       return {
         id: action.id,
-        contactState: 'send',
-        contactName: action.contactName,
+        contactState: 'sending',
         contactMailAddr: action.contactMailAddr,
         contactMessage: action.contactMessage,
+        isSendError: false,
       };
       
     case 'COMPLETE':
@@ -56,25 +56,25 @@ let contacts = (state = initialState, action) => {
       return {
         id: action.id,
         contactState: 'complete',
-        contactName: null,
         contactMailAddr: null,
         contactMessage: null,
+        isSendError: false,
       };
 
     case 'ERROR':
-      console.log('error');
+      console.log('reducers.contacts.contactState: error');
       return {
         id: action.id,
-        contactState: 'error',
-        contactName: action.contactName,
+        contactState: 'confirm',
         contactMailAddr: action.contactMailAddr,
         contactMessage: action.contactMessage,
+        isSendError: true,
       };
 
 
 
     default:
-//      console.log('reducers.contacts.default.action: ' + action.type + ', ' + action.id + ', ' + action.contactName);
+//      console.log('reducers.contacts.default.action: ' + action.type + ', ' + action.id);
       return state;
   }
 };

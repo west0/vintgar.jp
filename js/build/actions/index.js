@@ -5,11 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 var actionId = 1;
 
-var confirmContact = exports.confirmContact = function confirmContact(contactName, contactMailAddr, contactMessage) {
+var confirmContact = exports.confirmContact = function confirmContact(contactMailAddr, contactMessage) {
   return {
     type: 'CONFIRM',
     id: actionId++,
-    contactName: contactName,
     contactMailAddr: contactMailAddr,
     contactMessage: contactMessage
   };
@@ -29,12 +28,38 @@ var cancelDialog = exports.cancelDialog = function cancelDialog() {
   };
 };
 
-var sendMail = exports.sendMail = function sendMail(contactName, contactMailAddr, contactMessage) {
+var sendMail = exports.sendMail = function sendMail(contactMailAddr, contactMessage) {
+  return {
+    type: 'SEND',
+    id: actionId++,
+    contactMailAddr: contactMailAddr,
+    contactMessage: contactMessage
+  };
+};
+
+var dispError = exports.dispError = function dispError(contactMailAddr, contactMessage) {
   return {
     type: 'ERROR',
     id: actionId++,
-    contactName: contactName,
     contactMailAddr: contactMailAddr,
     contactMessage: contactMessage
+  };
+};
+
+var completeInquiry = exports.completeInquiry = function completeInquiry(contactMailAddr, contactMessage) {
+  return {
+    type: 'COMPLETE',
+    id: actionId++,
+    contactMailAddr: contactMailAddr,
+    contactMessage: contactMessage
+  };
+};
+
+var finishInquiry = exports.finishInquiry = function finishInquiry() {
+  return {
+    type: 'none',
+    id: actionId++,
+    contactMailAddr: null,
+    contactMessage: null
   };
 };

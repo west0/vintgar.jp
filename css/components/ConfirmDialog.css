@@ -10,14 +10,32 @@
   right: 0;
   top: 0;
   z-index: 0;
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  
+  -ms-flex-pack: justify;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+
 }
 
-.dialog-modal {
+.dialog-base {
   background-color: #f0f0f0;
   border-radius: 2px;
   display: block;
-  margin: 3rem auto;
+  height: 340px;
   width: 80%;
+  min-width: 256px;
   max-width: 400px;
   padding: 1rem;
 }
@@ -83,5 +101,17 @@
 .dialog-buttons {
   text-align: right;
 }
+
+.dialog-loading {
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+}
+
+@media all and (max-height:339px){
+  .dialog-container {
+    overflow-y: scroll;
+  }
+}
+
 
 

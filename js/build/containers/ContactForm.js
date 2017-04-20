@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+require('nodemailer');
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -25,8 +27,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-//import ReactDOM from 'react-dom';
-
 
 var ContactForm = function (_Component) {
   _inherits(ContactForm, _Component);
@@ -40,8 +40,6 @@ var ContactForm = function (_Component) {
   _createClass(ContactForm, [{
     key: '_onClear',
     value: function _onClear(e) {
-      //    console.log(this.refs.contactName.value ? this.refs.contactName.value : 'onClear()');
-      this.refs.contactName.value = '';
       this.refs.contactMailAddr.value = '';
       this.refs.contactMessage.value = '';
       this.props.dispatch((0, _actions.clearForm)());
@@ -49,8 +47,7 @@ var ContactForm = function (_Component) {
   }, {
     key: '_onConfirm',
     value: function _onConfirm(e) {
-      //    console.log('onConfirm()');
-      this.props.dispatch((0, _actions.confirmContact)('(名前は表示されません)', this.refs.contactMailAddr.value, this.refs.contactMessage.value));
+      this.props.dispatch((0, _actions.confirmContact)(this.refs.contactMailAddr.value, this.refs.contactMessage.value));
     }
   }, {
     key: '_renderDialog',
@@ -58,6 +55,8 @@ var ContactForm = function (_Component) {
       //    console.log('state: ' + this.props.state.contacts.contactState);
       switch (this.props.state.contacts.contactState) {
         case 'confirm':
+        case 'sending':
+        case 'complete':
         case 'error':
           //        console.log('_renderDialog.CONFIRM');
           return _react2.default.createElement(_ConfirmDialog2.default, null);

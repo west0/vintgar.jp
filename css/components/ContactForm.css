@@ -103,7 +103,7 @@ input, button, textarea, select {
 }
 #input-forms input:focus, #input-forms textarea:focus {
   border: 0 none;
-  border-bottom: 1px solid #53606a;
+  border-bottom: 1px solid #00b6d0;
 }
 
 /* /:focus */
