@@ -39,7 +39,7 @@ export const completeInquiry = (contactMailAddr, contactMessage) => ({
 })
 
 export const finishInquiry = () => ({
-  type: 'none',
+  type: 'FINISH',
   id: actionId++,
   contactMailAddr: null,
   contactMessage: null,

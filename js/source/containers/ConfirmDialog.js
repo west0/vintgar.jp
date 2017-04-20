@@ -35,32 +35,67 @@ class ConfirmDialog extends Component {
     ));
   }
   
+  EncodeHTMLForm(data) { // encode post parameter
+    console.log('EncodeHTMLForm()');
+    var params = [];
+    for ( var name in data ) {
+      var value = data[ name ];
+      var param = encodeURIComponent( name ) + '=' + encodeURIComponent( value );
+      params.push( param );
+    }
+    return params.join( '&' ).replace( /%20/g, '+' );
+  }
+  
   _sendMail(contactMailAddr, contactMessage) {
     console.log('ConfirmDialog._sendMail()');
     
     new Promise((resolve, reject) => {
-      setTimeout(() => {
-        //resolve()
-        reject()
-      }, 6000)
-    }).then(
-      () => {
-        console.log('complete-sleep()');
-        this.props.dispatch(completeInquiry());
-      },
-      () => {
-        console.log('error-sleep()');
-        this.props.dispatch(dispError(
-          contactMailAddr,
-          contactMessage
-        ));
+      console.log('Promise()');
+      const request = new XMLHttpRequest();
+      request.onload = function () {
+        console.log('request.onload()');
+        if (this.status === 200) {
+          console.log('status === 200');
+          console.log('data: ' + JSON.stringify(this.response));
+          resolve(this.response);
+        } else {
+          console.log('status !== 200');
+          reject(new Error(this.statusText));
+        }
       }
-    );
-
+      request.onerror = function () {
+        console.log('onerror()');
+        reject(new Error(`XMLHttpRequest Error: ${this.statusText}`));
+      }
+      request.open('POST', './mail.py', true);
+      console.log('request.open()_complete');
+      request.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+      console.log('request.setRequestHeader()_complete');
+      request.responseType = 'json';
+      console.log('request.responseType_complete');
+      request.send(this.EncodeHTMLForm({
+        mailAddr: contactMailAddr,
+        message: contactMessage,
+      }));
+      console.log('request.send()_complete');
+    }).then(
+      (data) => {
+        console.log('promise complete: ' + Object.keys(data).length);
+        console.log('promise complete: ' + JSON.stringify(data));
+        this.props.dispatch(completeInquiry());
+      }
+    ).catch(() => {
+      console.log('promise error: ');
+      this.props.dispatch(dispError(
+        contactMailAddr,
+        contactMessage
+      ));
+    });
   }
   
   _onClose(e) {
     console.log('ConfirmDialog._onClose()');
+    
     this.props.dispatch(finishInquiry());
   }
   
@@ -73,6 +108,7 @@ class ConfirmDialog extends Component {
           this.props.state.contacts.contactMailAddr,
           this.props.state.contacts.contactMessage
         );
+        console.log('_sendMail()_after');
         return this._renderDialog(contactState);
       
       default:

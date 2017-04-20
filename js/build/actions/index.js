@@ -57,7 +57,7 @@ var completeInquiry = exports.completeInquiry = function completeInquiry(contact
 
 var finishInquiry = exports.finishInquiry = function finishInquiry() {
   return {
-    type: 'none',
+    type: 'FINISH',
     id: actionId++,
     contactMailAddr: null,
     contactMessage: null

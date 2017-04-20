@@ -58,7 +58,7 @@ var completeInquiry = exports.completeInquiry = function completeInquiry(contact
 
 var finishInquiry = exports.finishInquiry = function finishInquiry() {
   return {
-    type: 'none',
+    type: 'FINISH',
     id: actionId++,
     contactMailAddr: null,
     contactMessage: null
@@ -842,6 +842,19 @@ var ConfirmDialog = function (_Component) {
       this.props.dispatch((0, _actions.sendMail)(this.props.state.contacts.contactMailAddr, this.props.state.contacts.contactMessage));
     }
   }, {
+    key: 'EncodeHTMLForm',
+    value: function EncodeHTMLForm(data) {
+      // encode post parameter
+      console.log('EncodeHTMLForm()');
+      var params = [];
+      for (var name in data) {
+        var value = data[name];
+        var param = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+        params.push(param);
+      }
+      return params.join('&').replace(/%20/g, '+');
+    }
+  }, {
     key: '_sendMail',
     value: function _sendMail(contactMailAddr, contactMessage) {
       var _this2 = this;
@@ -849,15 +862,40 @@ var ConfirmDialog = function (_Component) {
       console.log('ConfirmDialog._sendMail()');
 
       new Promise(function (resolve, reject) {
-        setTimeout(function () {
-          //resolve()
-          reject();
-        }, 6000);
-      }).then(function () {
-        console.log('complete-sleep()');
+        console.log('Promise()');
+        var request = new XMLHttpRequest();
+        request.onload = function () {
+          console.log('request.onload()');
+          if (this.status === 200) {
+            console.log('status === 200');
+            console.log('data: ' + JSON.stringify(this.response));
+            resolve(this.response);
+          } else {
+            console.log('status !== 200');
+            reject(new Error(this.statusText));
+          }
+        };
+        request.onerror = function () {
+          console.log('onerror()');
+          reject(new Error('XMLHttpRequest Error: ' + this.statusText));
+        };
+        request.open('POST', './mail.py', true);
+        console.log('request.open()_complete');
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log('request.setRequestHeader()_complete');
+        request.responseType = 'json';
+        console.log('request.responseType_complete');
+        request.send(_this2.EncodeHTMLForm({
+          mailAddr: contactMailAddr,
+          message: contactMessage
+        }));
+        console.log('request.send()_complete');
+      }).then(function (data) {
+        console.log('promise complete: ' + Object.keys(data).length);
+        console.log('promise complete: ' + JSON.stringify(data));
         _this2.props.dispatch((0, _actions.completeInquiry)());
-      }, function () {
-        console.log('error-sleep()');
+      }).catch(function () {
+        console.log('promise error: ');
         _this2.props.dispatch((0, _actions.dispError)(contactMailAddr, contactMessage));
       });
     }
@@ -865,6 +903,7 @@ var ConfirmDialog = function (_Component) {
     key: '_onClose',
     value: function _onClose(e) {
       console.log('ConfirmDialog._onClose()');
+
       this.props.dispatch((0, _actions.finishInquiry)());
     }
   }, {
@@ -875,6 +914,7 @@ var ConfirmDialog = function (_Component) {
         case 'sending':
           console.log('ConfirmDialog._createDialog > contactState > sending');
           this._sendMail(this.props.state.contacts.contactMailAddr, this.props.state.contacts.contactMessage);
+          console.log('_sendMail()_after');
           return this._renderDialog(contactState);
 
         default:
@@ -1301,6 +1341,7 @@ var contacts = function contacts() {
       };
 
     case 'CLEAR':
+    case 'FINISH':
       //      console.log('reducers.contacts.clear.action: ' + action.type + ', ' + action.id + ', ' + action.contactMailAddr);
       return {
         id: action.id,

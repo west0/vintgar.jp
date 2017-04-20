@@ -22,8 +22,9 @@ let contacts = (state = initialState, action) => {
         contactMessage: action.contactMessage,
         isSendError: false,
       }
-      
+    
     case 'CLEAR':
+    case 'FINISH':
 //      console.log('reducers.contacts.clear.action: ' + action.type + ', ' + action.id + ', ' + action.contactMailAddr);
       return {
         id: action.id,

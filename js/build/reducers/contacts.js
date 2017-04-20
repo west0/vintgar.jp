@@ -30,6 +30,7 @@ var contacts = function contacts() {
       };
 
     case 'CLEAR':
+    case 'FINISH':
       //      console.log('reducers.contacts.clear.action: ' + action.type + ', ' + action.id + ', ' + action.contactMailAddr);
       return {
         id: action.id,
