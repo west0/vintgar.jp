@@ -1,6 +1,10 @@
 
 #home{
-  background: url("images/home.jpg") center center / cover no-repeat fixed;
+  background-image: url("images/home.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+/*  background-attachment: fixed;*/
   height: 100vh;
   margin-bottom: 5rem;
   min-height: 320px;

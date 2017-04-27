@@ -34,35 +34,29 @@ var ConfirmDialog = function (_Component) {
   _createClass(ConfirmDialog, [{
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      console.log('remove_dialog-modal-open');
       document.body.classList.remove('dialog-modal-open');
     }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log('componentDidMount');
       if (this.props.state.contacts.contactState === 'confirm') {
-        console.log('add_dialog-modal-open');
         document.body.classList.add('dialog-modal-open');
       }
     }
   }, {
     key: '_onCancel',
     value: function _onCancel(e) {
-      console.log('ConfirmDialog._onCancel()');
       this.props.dispatch((0, _actions.cancelDialog)(this.props.state.contacts.contactMailAddr, this.props.state.contacts.contactMessage));
     }
   }, {
     key: '_onSend',
     value: function _onSend(e) {
-      console.log('ConfirmDialog._onSend()');
       this.props.dispatch((0, _actions.sendMail)(this.props.state.contacts.contactMailAddr, this.props.state.contacts.contactMessage));
     }
   }, {
     key: 'EncodeHTMLForm',
     value: function EncodeHTMLForm(data) {
       // encode post parameter
-      console.log('EncodeHTMLForm()');
       var params = [];
       for (var name in data) {
         var value = data[name];
@@ -76,66 +70,46 @@ var ConfirmDialog = function (_Component) {
     value: function _sendMail(contactMailAddr, contactMessage) {
       var _this2 = this;
 
-      console.log('ConfirmDialog._sendMail()');
-
       new Promise(function (resolve, reject) {
-        console.log('Promise()');
         var request = new XMLHttpRequest();
         request.onload = function () {
-          console.log('request.onload()');
           if (this.status === 200) {
-            console.log('status === 200');
-            console.log('data: ' + JSON.stringify(this.response));
             resolve(this.response);
           } else {
-            console.log('status !== 200');
             reject(new Error(this.statusText));
           }
         };
         request.onerror = function () {
-          console.log('onerror()');
           reject(new Error('XMLHttpRequest Error: ' + this.statusText));
         };
-        request.open('POST', './mail.py', true);
-        console.log('request.open()_complete');
+        request.open('POST', './mail.cgi', true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        console.log('request.setRequestHeader()_complete');
         request.responseType = 'json';
-        console.log('request.responseType_complete');
         request.send(_this2.EncodeHTMLForm({
           mailAddr: contactMailAddr,
           message: contactMessage
         }));
-        console.log('request.send()_complete');
       }).then(function (data) {
-        console.log('promise complete: ' + Object.keys(data).length);
-        console.log('promise complete: ' + JSON.stringify(data));
         _this2.props.dispatch((0, _actions.completeInquiry)());
       }).catch(function () {
-        console.log('promise error: ');
         _this2.props.dispatch((0, _actions.dispError)(contactMailAddr, contactMessage));
       });
     }
   }, {
     key: '_onClose',
     value: function _onClose(e) {
-      console.log('ConfirmDialog._onClose()');
-
+      this.props.dispatch((0, _actions.clearInputState)());
       this.props.dispatch((0, _actions.finishInquiry)());
     }
   }, {
     key: '_createDialog',
     value: function _createDialog(contactState) {
-      console.log('ConfirmDialog._createDialog');
       switch (contactState) {
         case 'sending':
-          console.log('ConfirmDialog._createDialog > contactState > sending');
           this._sendMail(this.props.state.contacts.contactMailAddr, this.props.state.contacts.contactMessage);
-          console.log('_sendMail()_after');
           return this._renderDialog(contactState);
 
         default:
-          console.log('ConfirmDialog._createDialog > contactState > default: ' + contactState);
           return this._renderDialog(contactState);
       }
     }
@@ -144,10 +118,8 @@ var ConfirmDialog = function (_Component) {
     value: function _renderDialog(contactState) {
       var _this3 = this;
 
-      console.log('_renderDialog()');
       switch (contactState) {
         case 'sending':
-          console.log('ConfirmDialog._renderDialog > sending');
           return _react2.default.createElement(
             'div',
             null,
@@ -173,7 +145,6 @@ var ConfirmDialog = function (_Component) {
           );
 
         case 'complete':
-          console.log('ConfirmDialog._renderDialog > finish');
           return _react2.default.createElement(
             'div',
             null,
@@ -193,7 +164,9 @@ var ConfirmDialog = function (_Component) {
             _react2.default.createElement(
               'p',
               { className: 'dialog-description' },
-              '\u304A\u554F\u3044\u5408\u308F\u305B\u3092\u9001\u4FE1\u3057\u307E\u3057\u305F\u3002'
+              '\u304A\u554F\u3044\u5408\u308F\u305B\u3092\u9001\u4FE1\u3057\u307E\u3057\u305F\u3002',
+              _react2.default.createElement('br', null),
+              '2\u55B6\u696D\u65E5\u4EE5\u5185\u306B\u8FD4\u4FE1\u304C\u306A\u3044\u5834\u5408\u306F\u3001\u6050\u308C\u5165\u308A\u307E\u3059\u304C\u518D\u5EA6\u304A\u554F\u3044\u5408\u308F\u305B\u304F\u3060\u3055\u3044\u3002'
             ),
             _react2.default.createElement(
               'div',
@@ -215,7 +188,6 @@ var ConfirmDialog = function (_Component) {
 
         default:
           // contactState: confirm
-          console.log('ConfirmDialog._renderDialog > default: ' + contactState + ' / ' + this.props.state.contacts.isSendError);
           return _react2.default.createElement(
             'form',
             {
@@ -243,8 +215,7 @@ var ConfirmDialog = function (_Component) {
                 'p',
                 { className: 'dialog-description dialog-error-message' },
                 '\u9001\u4FE1\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F\u3002\u518D\u5EA6\u9001\u4FE1\u30DC\u30BF\u30F3\u3092\u30AF\u30EA\u30C3\u30AF\u3044\u305F\u3060\u304F\u304B\u3001\u30EA\u30ED\u30FC\u30C9\u3057\u3066\u518D\u5EA6\u304A\u8A66\u3057\u304F\u3060\u3055\u3044\u3002'
-              ) : null,
-              _react2.default.createElement(
+              ) : _react2.default.createElement(
                 'p',
                 { className: 'dialog-description' },
                 '\u4EE5\u4E0B\u306E\u5185\u5BB9\u3067\u9001\u4FE1\u3057\u307E\u3059\u3002'

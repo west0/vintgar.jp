@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
 var initialState = [{
   id: 0,
   contactState: 'none',
@@ -16,11 +15,8 @@ var contacts = function contacts() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments[1];
 
-  //  console.log('reducers.contacts_before_switch.action: ' + action.type + ', ' + action.id);  
-
   switch (action.type) {
     case 'CONFIRM':
-      //      console.log('reducers.contacts.confirm.action: ' + action.type + ', ' + action.id);
       return {
         id: action.id,
         contactState: 'confirm',
@@ -31,7 +27,6 @@ var contacts = function contacts() {
 
     case 'CLEAR':
     case 'FINISH':
-      //      console.log('reducers.contacts.clear.action: ' + action.type + ', ' + action.id + ', ' + action.contactMailAddr);
       return {
         id: action.id,
         contactState: 'none',
@@ -59,7 +54,6 @@ var contacts = function contacts() {
       };
 
     case 'COMPLETE':
-      console.log('complete');
       return {
         id: action.id,
         contactState: 'complete',
@@ -69,7 +63,6 @@ var contacts = function contacts() {
       };
 
     case 'ERROR':
-      console.log('reducers.contacts.contactState: error');
       return {
         id: action.id,
         contactState: 'confirm',
@@ -79,7 +72,6 @@ var contacts = function contacts() {
       };
 
     default:
-      //      console.log('reducers.contacts.default.action: ' + action.type + ', ' + action.id);
       return state;
   }
 };

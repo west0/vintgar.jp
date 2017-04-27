@@ -63,3 +63,37 @@ var finishInquiry = exports.finishInquiry = function finishInquiry() {
     contactMessage: null
   };
 };
+
+// input action
+var updateMailAddrState = exports.updateMailAddrState = function updateMailAddrState(mailAddrState) {
+  switch (mailAddrState) {
+    case 'null-error':
+      return { type: 'MAILADDR_NULL_ERROR' };
+
+    case 'mb-error':
+      return { type: 'MAILADDR_MB_ERROR' };
+
+    case 'complete':
+      return { type: 'MAILADDR_COMPLETE' };
+
+    default:
+      return null;
+  }
+};
+
+var updateMessageState = exports.updateMessageState = function updateMessageState(messageState) {
+  switch (messageState) {
+    case 'null-error':
+      return { type: 'MESSAGE_NULL_ERROR' };
+
+    case 'complete':
+      return { type: 'MESSAGE_COMPLETE' };
+
+    default:
+      return null;
+  }
+};
+
+var clearInputState = exports.clearInputState = function clearInputState() {
+  return { type: 'CLEAR_STATE' };
+};

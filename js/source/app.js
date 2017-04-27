@@ -1,7 +1,3 @@
-/* @flow */
-
-'use strict';
-
 import React from 'react';
 import { createStore } from 'redux';
 import ReactDOM from 'react-dom';
@@ -15,6 +11,7 @@ import ContactForm from './containers/ContactForm';
 import { reducers } from './reducers';
 
 let store = createStore(reducers);
+var dt = new Date();
 
 ReactDOM.render(
   <Provider store={store}>
@@ -26,6 +23,7 @@ ReactDOM.render(
         <Skills />
         <ContactForm />
       </div>
+      <footer id="page-footer" className="root-component">vintgar.jp&nbsp;(C)&nbsp;{dt.getFullYear()}</footer>
       <GlobalNav />
     </div>
   </Provider>,

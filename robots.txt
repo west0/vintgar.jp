@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow: /unsupported.html
+Sitemap: https://vintgar.jp/sitemap.xml

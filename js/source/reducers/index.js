@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 import contacts from './contacts';
-//import some from './some';
+import inputs from './inputs';
 
 
 export const reducers = combineReducers({
   contacts: contacts,
+  inputs: inputs,
 });
 
 export default reducers

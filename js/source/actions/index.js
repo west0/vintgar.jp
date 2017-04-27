@@ -46,3 +46,37 @@ export const finishInquiry = () => ({
 })
 
 
+// input action
+export const updateMailAddrState = (mailAddrState) => {
+  switch (mailAddrState) {
+    case 'null-error':
+      return {type: 'MAILADDR_NULL_ERROR'}
+      
+    case 'mb-error':
+      return {type: 'MAILADDR_MB_ERROR'}
+
+    case 'complete':
+      return {type: 'MAILADDR_COMPLETE'}
+      
+    default:
+      return null;
+  }
+}
+
+export const updateMessageState = (messageState) => {
+  switch (messageState) {
+    case 'null-error':
+      return {type: 'MESSAGE_NULL_ERROR'}
+
+    case 'complete':
+      return {type: 'MESSAGE_COMPLETE'}
+      
+    default:
+      return null;
+  }
+}
+
+export const clearInputState = () => {
+  return {type: 'CLEAR_STATE'}
+}
+

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.6
+#!/bin/python3
 # -*- coding: UTF-8 -*-
 
 import sys
@@ -17,7 +17,7 @@ postData = cgi.FieldStorage()
 ACCOUNT = "info.vintgar@gmail.com"
 TO = postData.getvalue('mailAddr','ns.westend@gmail.com')
 PASSWORD = "gmail85gmail"
-MESSAGE = "(自動返信メール)\nお問い合わせありがとうございます。\n以下の内容でお問い合わせ内容を受け付けました。\n\n----------\n[メールアドレス]\n" + postData.getvalue('mailAddr','none') + "\n\n\n[本文]\n" + postData.getvalue('message','no message.') + "\n----------\n\n2営業日以内に返信がない場合は、恐れ入りますが再度お問い合わせください。\n\n--\n西村ヨシロウ(vintgar.jp)\n※このメールアドレスは送信専用です。ご返信いただけません。"
+MESSAGE = "(自動返信メール)\nお問い合わせありがとうございます。\n以下の内容でお問い合わせ内容を受け付けました。\n\n----------\n[メールアドレス]\n" + postData.getvalue('mailAddr','none') + "\n\n\n[本文]\n" + postData.getvalue('message','no message.') + "\n----------\n\n2営業日以内に返信がない場合は、恐れ入りますが再度お問い合わせください。\n\n--\n西村ヨシロウ(vintgar.jp)\n※本メールにお心当たりがない場合は、恐れ入りますが本メールアドレスにその旨ご返信ください。"
 
 
 

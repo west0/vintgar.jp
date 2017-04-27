@@ -1,6 +1,6 @@
 # QA
-./node_modules/.bin/eslint js/source js/__tests__
-npm test
+#./node_modules/.bin/eslint js/source js/__tests__
+#npm test
 
 # js transform
 ./node_modules/.bin/babel js/source/ -d js/build

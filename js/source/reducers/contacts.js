@@ -1,4 +1,3 @@
-
 let initialState = [
   {
     id: 0,
@@ -10,11 +9,8 @@ let initialState = [
 ];
 
 let contacts = (state = initialState, action) => {
-//  console.log('reducers.contacts_before_switch.action: ' + action.type + ', ' + action.id);  
-
   switch (action.type) {
     case 'CONFIRM':
-//      console.log('reducers.contacts.confirm.action: ' + action.type + ', ' + action.id);
       return {
         id: action.id,
         contactState: 'confirm',
@@ -25,7 +21,6 @@ let contacts = (state = initialState, action) => {
     
     case 'CLEAR':
     case 'FINISH':
-//      console.log('reducers.contacts.clear.action: ' + action.type + ', ' + action.id + ', ' + action.contactMailAddr);
       return {
         id: action.id,
         contactState: 'none',
@@ -53,7 +48,6 @@ let contacts = (state = initialState, action) => {
       };
       
     case 'COMPLETE':
-      console.log('complete');
       return {
         id: action.id,
         contactState: 'complete',
@@ -63,7 +57,6 @@ let contacts = (state = initialState, action) => {
       };
 
     case 'ERROR':
-      console.log('reducers.contacts.contactState: error');
       return {
         id: action.id,
         contactState: 'confirm',
@@ -72,10 +65,7 @@ let contacts = (state = initialState, action) => {
         isSendError: true,
       };
 
-
-
     default:
-//      console.log('reducers.contacts.default.action: ' + action.type + ', ' + action.id);
       return state;
   }
 };

@@ -41,6 +41,7 @@ var _reducers = require('./reducers');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var store = (0, _redux.createStore)(_reducers.reducers);
+var dt = new Date();
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRedux.Provider,
@@ -56,6 +57,12 @@ _reactDom2.default.render(_react2.default.createElement(
       _react2.default.createElement(_Services2.default, null),
       _react2.default.createElement(_Skills2.default, null),
       _react2.default.createElement(_ContactForm2.default, null)
+    ),
+    _react2.default.createElement(
+      'footer',
+      { id: 'page-footer', className: 'root-component' },
+      'vintgar.jp\xA0(C)\xA0',
+      dt.getFullYear()
     ),
     _react2.default.createElement(_GlobalNav2.default, null)
   )

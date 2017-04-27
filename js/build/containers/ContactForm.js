@@ -20,6 +20,10 @@ var _ConfirmDialog = require('../containers/ConfirmDialog');
 
 var _ConfirmDialog2 = _interopRequireDefault(_ConfirmDialog);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52,17 +56,42 @@ var ContactForm = function (_Component) {
   }, {
     key: '_renderDialog',
     value: function _renderDialog() {
-      //    console.log('state: ' + this.props.state.contacts.contactState);
       switch (this.props.state.contacts.contactState) {
         case 'confirm':
         case 'sending':
         case 'complete':
         case 'error':
-          //        console.log('_renderDialog.CONFIRM');
           return _react2.default.createElement(_ConfirmDialog2.default, null);
 
         default:
-          //        console.log('_renderDialog.default');
+          return null;
+      }
+    }
+  }, {
+    key: '_checkValue',
+    value: function _checkValue(event) {
+      var type = event.target.name;
+      var val = event.target.value.trim();
+      switch (type) {
+        case 'contact-mail':
+          var mailAddrState = 'complete';
+          if (val === '') {
+            mailAddrState = 'null-error';
+          } else if (/[^\x01-\x7E\xA1-\xDF]/.test(val)) {
+            mailAddrState = 'mb-error';
+          }
+          this.props.dispatch((0, _actions.updateMailAddrState)(mailAddrState));
+          return null;
+
+        case 'contact-message':
+          var messageState = 'complete';
+          if (val === '') {
+            messageState = 'null-error';
+          }
+          this.props.dispatch((0, _actions.updateMessageState)(messageState));
+          return null;
+
+        default:
           return null;
       }
     }
@@ -70,6 +99,42 @@ var ContactForm = function (_Component) {
     key: 'render',
     value: function render() {
       var _this2 = this;
+
+      var inputState = this.props.state.inputs.isMailAddrNullError !== undefined || this.props.state.inputs.isMailAddrMbError !== undefined || this.props.state.inputs.isMessageNullError !== undefined ? true : false;
+
+      var isMailAddrNullError = this.props.state.inputs.isMailAddrNullError === undefined ? true : this.props.state.inputs.isMailAddrNullError;
+      var isMailAddrMbError = this.props.state.inputs.isMailAddrMbError === undefined ? false : this.props.state.inputs.isMailAddrMbError;
+      var isMessageNullError = this.props.state.inputs.isMessageNullError === undefined ? true : this.props.state.inputs.isMessageNullError;
+
+      var classNameForContactMailAddr = (0, _classnames2.default)({ 'form-err': false });
+      var classNameForContactMessage = (0, _classnames2.default)({ 'form-err': false });
+      var classNameForConfirmButton = (0, _classnames2.default)({ 'button-main': false, 'button-disabled': true });
+      var isConfirmButtonDisabled = true;
+
+      if (inputState) {
+        if (isMailAddrNullError) {
+          classNameForContactMailAddr = (0, _classnames2.default)({ 'form-err': true });
+        }
+
+        if (isMessageNullError) {
+          classNameForContactMessage = (0, _classnames2.default)({ 'form-err': true });
+        }
+      }
+
+      if (!isMailAddrNullError && !isMailAddrMbError && !isMessageNullError) {
+        classNameForContactMailAddr = (0, _classnames2.default)({ 'form-err': false });
+        classNameForContactMessage = (0, _classnames2.default)({ 'form-err': false });
+        classNameForConfirmButton = (0, _classnames2.default)({
+          'button-main': true,
+          'button-disabled': false
+        });
+        isConfirmButtonDisabled = false;
+      }
+
+      if (this.props.state.contacts.contactState === 'complete') {
+        this.refs.contactMailAddr.value = '';
+        this.refs.contactMessage.value = '';
+      }
 
       return _react2.default.createElement(
         'div',
@@ -82,7 +147,7 @@ var ContactForm = function (_Component) {
           _react2.default.createElement(
             'h3',
             { className: 'page-title' },
-            'Contact Form'
+            'contact form'
           ),
           _react2.default.createElement(
             'div',
@@ -113,7 +178,20 @@ var ContactForm = function (_Component) {
             _react2.default.createElement(
               'li',
               null,
-              _react2.default.createElement('input', { id: 'contact-mail', ref: 'contactMailAddr', maxLength: '48', type: 'email' }),
+              _react2.default.createElement('input', {
+                id: 'contact-mail',
+                className: classNameForContactMailAddr,
+                name: 'contact-mail',
+                ref: 'contactMailAddr',
+                maxLength: '48',
+                type: 'email',
+                onChange: function onChange(e) {
+                  _this2._checkValue(e);
+                },
+                onBlur: function onBlur(e) {
+                  _this2._checkValue(e);
+                }
+              }),
               _react2.default.createElement(
                 'label',
                 { htmlFor: 'contact-mail' },
@@ -122,13 +200,35 @@ var ContactForm = function (_Component) {
               _react2.default.createElement(
                 'p',
                 { className: 'input-note' },
-                '\u534A\u89D248\u6587\u5B57'
+                '\u534A\u89D248\u6587\u5B57',
+                inputState && isMailAddrNullError ? _react2.default.createElement(
+                  'span',
+                  { className: 'input-err' },
+                  '\xA0\u5FC5\u9808\u9805\u76EE\u3067\u3059\u3002'
+                ) : null,
+                inputState && isMailAddrMbError ? _react2.default.createElement(
+                  'span',
+                  { className: 'input-err' },
+                  '\xA0\u534A\u89D2\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\u3002'
+                ) : null
               )
             ),
             _react2.default.createElement(
               'li',
               null,
-              _react2.default.createElement('textarea', { id: 'contact-message', ref: 'contactMessage', maxLength: '256' }),
+              _react2.default.createElement('textarea', {
+                id: 'contact-message',
+                className: classNameForContactMessage,
+                name: 'contact-message',
+                ref: 'contactMessage',
+                maxLength: '200',
+                onChange: function onChange(e) {
+                  _this2._checkValue(e);
+                },
+                onBlur: function onBlur(e) {
+                  _this2._checkValue(e);
+                }
+              }),
               _react2.default.createElement(
                 'label',
                 { htmlFor: 'contact-message' },
@@ -137,7 +237,12 @@ var ContactForm = function (_Component) {
               _react2.default.createElement(
                 'p',
                 { className: 'input-note' },
-                '128\u6587\u5B57'
+                '200\u6587\u5B57',
+                inputState && isMessageNullError ? _react2.default.createElement(
+                  'span',
+                  { className: 'input-err' },
+                  '\xA0\u5FC5\u9808\u9805\u76EE\u3067\u3059\u3002'
+                ) : null
               )
             )
           ),
@@ -160,19 +265,16 @@ var ContactForm = function (_Component) {
               'button',
               {
                 id: 'button-submit',
-                className: 'button-main',
+                className: classNameForConfirmButton,
+                ref: 'confirmButton',
                 type: 'button',
                 onClick: function onClick(e) {
                   _this2._onConfirm(e);
-                }
+                },
+                disabled: isConfirmButtonDisabled
               },
               'CONFIRM'
             )
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'If you will not get any replies in two days, send messages again.'
           )
         ),
         this._renderDialog()

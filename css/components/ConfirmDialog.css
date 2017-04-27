@@ -38,6 +38,7 @@
   min-width: 256px;
   max-width: 400px;
   padding: 1rem;
+  position: relative;
 }
 
 .dialog-header {
@@ -58,6 +59,7 @@
 
 .dialog-description {
   font-size: 0.875rem;
+  height: 2rem;
   line-height: 1rem;
   margin: 0;
   padding: 0 0 1rem 0;
@@ -84,6 +86,8 @@
   line-height: 1rem;
   margin: 0;
   padding: 0 0 1rem 1rem;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
 }
 
 .dialog-message {
@@ -99,7 +103,13 @@
 }
 
 .dialog-buttons {
-  text-align: right;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.dialog-buttons #button-send{
+  margin-right:0;
 }
 
 .dialog-loading {

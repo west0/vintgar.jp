@@ -1,5 +1,3 @@
-/* @flow */
-
 import React, {Component} from 'react';
 
 type Props = {
@@ -15,16 +13,15 @@ class Services extends Component {
     return (
 
 <section id="services" className="page-component profile-section">
-  <h3 className="page-title">service</h3>
-{/*  <div><img id="service-img" src="images/service.png" alt="project management, dev-direction, business-consulting" /></div>*/}
+  <h3 className="page-title">services</h3>
   <p id="service-description">
-    フリーランスでプロジェクト推進をお手伝いしています。<br />皆様の課題に合わせて、主に以下の要素を柔軟に組み合わせてお手伝いいたします。まずはお気軽にご相談ください。
+    フリーランスでプロジェクト推進をお手伝いしています。<br />皆様の課題に合わせて、以下の要素を柔軟に組み合わせてお手伝いしています。まずはお気軽にご相談ください。
   </p>
   <dl id="service-list">
     <dt>プロジェクトマネジメント</dt>
     <dd>
       <p className="service-detail">PMBOK準拠, 各社ルール準拠, マネジメントプロセス改善 etc.</p>
-      <p className="service-note">* [Certification] PMP(PMI), ProjectManager(IPA.Japan)</p>
+      <p className="service-note">* [認定] PMP(PMI), ProjectManager(IPA.Japan)</p>
     </dd>
     <dt>開発ディレクション</dt>
     <dd>
